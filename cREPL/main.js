@@ -1,20 +1,22 @@
-const spawn = require('child_process').spawn
-const gcc = spawn('gcc', ['-Wall', 'main.c', '-o', 'main', '-lcs50', '-lm'])
+const express = require('express')
+const app = express()
+const getData = require('./compile').compileNRun
 
-gcc.stdout.on('data', (data) => {
-  console.log(`stdout: ${data}`)
+const port = (process.env.PORT || 8000)
+
+app.set('json spaces', 2)
+
+app.listen(port, () => {
+  console.log('We are live on ' + port);
 })
 
-gcc.stderr.on('data', (data) => {
-  console.log(`stderr: ${data}`)
-})
-
-gcc.on('close', (code) => {
-  console.log(`child process exited with code ${code}`)
-  const child = spawn('./main')
-  child.stdin.setEncoding('ascii')
-  child.stdout.pipe(process.stdout)
-  process.stdin.on("data", function (input) {
-    child.stdin.write(input+'\n')
-  })
+app.all('/', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next()
+ })
+ 
+app.get('/', function (req, res) {
+  res.setHeader('Content-Type', 'application/json');
+    res.json(getData())
 })
