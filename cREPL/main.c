@@ -4,11 +4,11 @@
 int main() {
   printf("Hello world!\n");
   printf("Numeros!\n");
-  int a = GetInt();
+  int a = 2;
   printf("a es %i\n", a);
-  int b = GetInt();
+  int b = 3;
   printf("b es %i\n", b);
-  int c = GetInt();
+  int c = 5;
   printf("c es %i\n", c);
   return 0;
 }
