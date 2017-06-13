@@ -6,7 +6,11 @@ const text = `#include <stdio.h>
 #include <cs50.h>
 
 int fibonacci(int n) {
+  if (n==0 || n ==1) {
     return n;
+  } else {
+    return fibonacci(n-1)+fibonacci(n-2);
+  }
 }
 
 int main() {
@@ -37,5 +41,5 @@ app.all('/', function(req, res, next) {
 
 app.get('/', function (req, res) {
   res.setHeader('Content-Type', 'application/json');
-    res.json(compileNRun('testo',text))
+    res.json(compileNRun('test',text))
 })
