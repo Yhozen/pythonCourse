@@ -1,6 +1,25 @@
 const express = require('express')
 const app = express()
-const getData = require('./compile').compileNRun
+const { compileNRun } = require('./compile')
+
+const text = `#include <stdio.h>
+#include <cs50.h>
+
+int fibonacci(int n) {
+    return n;
+}
+
+int main() {
+  printf("Hello world!\\n");
+  printf("Numeros!\\n");
+  int a = 2;
+  printf("a es %i\\n", a);
+  int b = 3;
+  printf("b es %i\\n", b);
+  int c = 30;
+  printf("c es %i\\n", fibonacci(c));
+  return 0;
+}`
 
 const port = (process.env.PORT || 8000)
 
@@ -15,8 +34,8 @@ app.all('/', function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   next()
  })
- 
+
 app.get('/', function (req, res) {
   res.setHeader('Content-Type', 'application/json');
-    res.json(getData())
+    res.json(compileNRun('testo',text))
 })
