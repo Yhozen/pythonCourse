@@ -1,16 +1,29 @@
 import React, { Component } from 'react'
+import $ from 'jquery'
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''}
+    this.state = {value: '', compiled: ''}
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(event) {
     let { value } = event.target
     this.setState({value})
   }
+
+  handleSubmit(event) {
+    event.preventDefault()
+    let body = {
+      code:  this.state.value,
+       file: 'testa'
+     }
+    $.post("http://localhost:8000/", body, compiled => {
+      this.setState({compiled})
+    })
+   }
 
   render() {
     return (
@@ -25,7 +38,7 @@ class App extends Component {
            </ul>
          </div>
        </nav>
-         <div className="row">
+         <div className="row" onSubmit={this.handleSubmit}>
             <form className="col s6">
               <div className="row">
                 <div className="input-field col s12">
@@ -34,10 +47,14 @@ class App extends Component {
                   <label for="icon_prefix2">First Name</label>
                 </div>
               </div>
+               <button className="waves-effect waves-light btn" type="submit" value="Submit" >COMPILAR</button>
             </form>
             <div className="col s6">
-              {this.state.value}
-
+              {this.state.compiled.split('\n').map(line =>{
+                return (
+                  <p>{line}</p>
+                )
+              })}
             </div>
           </div>
       </div>

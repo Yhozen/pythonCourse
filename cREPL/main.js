@@ -1,5 +1,10 @@
 const express = require('express')
 const app = express()
+
+const bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
 const { compileNRun } = require('./compile')
 
 const port = (process.env.PORT || 8000)
@@ -12,13 +17,12 @@ app.listen(port, () => {
 
 app.all('/', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With")
   next()
  })
 
-app.get('/', function (req, res) {
-  res.setHeader('Content-Type', 'application/json');
-    res.json(compileNRun('test',text))
+app.post('/', function (req, res) {
+  res.json(compileNRun(req.body.file, req.body.code))
 })
 
 // #include <stdio.h>
@@ -39,7 +43,7 @@ app.get('/', function (req, res) {
 //   printf("a es %i\n", a);
 //   int b = 3;
 //   printf("b es %i\n", b);
-//   int c = 30;
+//   int c = 31;
 //   printf("c es %i\n", fibonacci(c));
 //   return 0;
 // }
