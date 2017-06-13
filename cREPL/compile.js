@@ -1,10 +1,8 @@
 const { spawnSync } = require('child_process')
 const { writeFileSync, unlinkSync } = require('fs')
 
-
-
-const compileNRun = (file, text) => {
-  writeFileSync(`/tmp/${file}.c`,  text)
+const compileNRun = (file, code) => {
+  writeFileSync(`/tmp/${file}.c`,  code)
   let output = ''
   const gcc = spawnSync('gcc', ['-Wall', `/tmp/${file}.c`, '-o', `/tmp/${file}`, '-lcs50', '-lm'])
   if (gcc.status == 0) {
@@ -15,11 +13,11 @@ const compileNRun = (file, text) => {
     } else {
       output += compiled.stderr + '\n'
     }
+    unlinkSync(`/tmp/${file}`)
   } else {
     output += gcc.stderr + '\n'
   }
   unlinkSync(`/tmp/${file}.c`)
-  unlinkSync(`/tmp/${file}`)
   return output
 }
 
