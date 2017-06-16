@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import $ from 'jquery'
+import React, { Component } from 'react' // importa libreria de react
+import $ from 'jquery' // importa libreria jquery, nos sirve para la peticion al servidor
 
 const clase0 = `¿Qué es una función?
 Una función es un bloque de código que realiza alguna operación.
@@ -99,27 +99,27 @@ Paso 5: Ocupa tu tercera variable y asígnale la suma de tus dos primeras variab
 Paso 6: ocupa printf para imprimir tu variable (pista: recuerda que para utilizar tu variable debemos colocar %i (según el tipo de tu variable) y luego nombrarla.
 Recuerda cerrar todos los corchetes y colocar los ; donde corresponda`
 
-class App extends Component {
-  constructor(props) {
+class App extends Component { // crea una clase de componente de react
+  constructor(props) { // es algo así como la funcion main de c, pasa al iniciarse
     super(props);
-    this.state = {value: '', compiled: ''}
-    this.handleChange = this.handleChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.state = {value: '', compiled: ''} // declara los estados que despues vamos a editar
+    this.handleChange = this.handleChange.bind(this) // esto es un tema propio de js, no es necesario entenderlo pero si
+    this.handleSubmit = this.handleSubmit.bind(this) // hacerlo para cada funcion
   }
 
-  handleChange(event) {
+  handleChange(event) { // funcion para guardar
     let { value } = event.target
     this.setState({value})
   }
 
-  handleSubmit(event) {
-    event.preventDefault()
-    let body = {
+  handleSubmit(event) { // funcion para mandar a compilar
+    event.preventDefault() // evita que la pagina se actualice sola, comportamiento normal en los navegadores
+    let body = { // objeto a llamar en la peticion
       code:  this.state.value,
        file: 'testa'
      }
-    $.post("http://localhost:8000/", body, compiled => {
-      this.setState({compiled})
+    $.post("http://localhost:8000/", body, compiled => { // peticion al servidor, de argumento tiene, la direccion, el objeto con el texo y nombre del archivo, y una funcion que se ejecutara cuando reciba una respuesta
+      this.setState({compiled}) // guarda la respuesta en el estado compilado para mostrarlo
     })
    }
 
