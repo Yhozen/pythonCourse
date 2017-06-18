@@ -40,16 +40,16 @@ class Clases extends Component { // crea una clase de componente de react
                 <div className="input-field col s12">
                   <i className="material-icons prefix">code</i>
                   <textarea value={this.state.value} onChange={this.handleChange} id="icon_prefix2" className="materialize-textarea"></textarea>
-                  <label for="icon_prefix2">Código</label>
+                  <label htmlFor="icon_prefix2">Código</label>
                 </div>
               </div>
                <button className="waves-effect waves-light btn" type="submit" value="Submit" >COMPILAR</button>
             </form>
             <div className="col s4">
               <h5>Consola</h5>
-              {this.state.compiled.split('\n').map(line =>{
+              {this.state.compiled.split('\n').map((line, i) =>{ // se crea un arreglo de strings por cada linea, luego cada linea se muestra en un <p> distinto
                 return (
-                  <p>{line}</p>
+                  <p key={i} >{line}</p>
                 )
               })}
             </div>

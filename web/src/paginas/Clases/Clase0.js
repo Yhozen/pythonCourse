@@ -1,5 +1,6 @@
 const clase0 = {
   title: 'Clase 0: Introducción',
+  tags: ['funciones', 'variables', 'básico', 'librerias', 'hello', 'world', 'main', 'tipo', 'datos'],
   text: `¿Qué es una función?
   Una función es un bloque de código que realiza alguna operación.
   Parámetros:
