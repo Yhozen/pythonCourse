@@ -7,7 +7,7 @@ class App extends Component { // crea una clase de componente de react
   constructor(props) { // es algo así como la funcion main de c, pasa al iniciarse
     super(props);
     this.state = {
-      pagina: Clases
+      pagina: <Clases clase={Clase0}/>
     }
     this.router = this.router.bind(this)
   }
@@ -22,17 +22,17 @@ class App extends Component { // crea una clase de componente de react
       <div>
         <nav>
          <div className="nav-wrapper">
-           <a onClick={() => this.router(Clases)} className="brand-logo">CEESE50</a>
+           <a onClick={() => this.router(<Clases clase={Clase0}/>)} className="brand-logo">CEESE50</a>
            <ul id="nav-mobile" className="right hide-on-med-and-down">
-             <li><a onClick={()=> this.router(Indice)}>Clases</a></li>
+             <li><a onClick={()=> this.router(<Indice router={this.router}/>)}>Clases</a></li>
 
-             <li><a onClick={()=> this.router(Test)}>Sass</a></li>
+             <li><a onClick={()=> this.router(<Test/>)}>Test</a></li>
 
            </ul>
 
          </div>
        </nav>
-       <this.state.pagina router={this.router} clase={Clase0}/>
+       {this.state.pagina }
       </div>
     );
   }
