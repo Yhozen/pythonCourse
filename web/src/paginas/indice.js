@@ -28,11 +28,11 @@ class Indice extends Component {
               <p>{Clase1.brief}</p>
             </div>
             <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase1}>Ir a la clase 1!</a>
+              <a onClick={() => this.props.router(<Clases clase={Clase1}/>)}> Ir a la clase 1!</a>
             </div>
           </div>
-        </div>      
-                                                  
+        </div>
+
         <div className="col s4">
         <div className="card red lighten-1">
             <div className="card-content white-text">
@@ -40,7 +40,7 @@ class Indice extends Component {
               <p>{Clase2.brief}</p>
             </div>
             <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase2}>Ir a la clase 2!</a>
+              <a onClick={() => this.props.router(<Clases clase={Clase2}/>)}> Ir a la clase 2!</a>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ class Indice extends Component {
               <p>{Clase3.brief}</p>
             </div>
             <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase3}>Ir a la clase 3!</a>
+              <a onClick={() => this.props.router(<Clases clase={Clase3}/>)}> Ir a la clase 3!</a>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@ class Indice extends Component {
               <p>{Clase4.brief}</p>
             </div>
             <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase4}>Ir a la clase 4!</a>
+              <a onClick={() => this.props.router(<Clases clase={Clase4}/>)}>Ir a la clase 4!</a>
             </div>
           </div>
         </div>
@@ -76,7 +76,7 @@ class Indice extends Component {
               <p>{Clase5.brief}</p>
             </div>
             <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase5}>Ir a la clase 5!</a>
+              <a onClick={() => this.props.router(<Clases clase={Clase5}/>)}> Ir a la clase 5!</a>
             </div>
           </div>
         </div>
@@ -88,7 +88,7 @@ class Indice extends Component {
               <p>{Clase6.brief}</p>
             </div>
             <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase6}>Ir a la clase 6!</a>
+              <a onClick={() => this.props.router(<Clases clase={Clase6}/>)}> Ir a la clase 6!</a>
             </div>
           </div>
         </div>
@@ -100,7 +100,7 @@ class Indice extends Component {
               <p>{Clase7.brief}</p>
             </div>
             <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase7}>Ir a la clase 7!</a>
+              <a onClick={() => this.props.router(<Clases clase={Clase7}/>)}>Ir a la clase 7!</a>
             </div>
           </div>
         </div>
@@ -112,7 +112,7 @@ class Indice extends Component {
               <p>{Clase8.brief}</p>
             </div>
             <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase8}>Ir a la clase 8!</a>
+              <a onClick={() => this.props.router(<Clases clase={Clase8}/>)}> Ir a la clase 8!</a>
             </div>
           </div>
         </div>
@@ -124,7 +124,7 @@ class Indice extends Component {
               <p>{Clase9.brief}</p>
             </div>
             <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase9}>Ir a la clase 9!</a>
+              <a onClick={() => this.props.router(<Clases clase={Clase9}/>)}> Ir a la clase 9!</a>
             </div>
           </div>
         </div>
