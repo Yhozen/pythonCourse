@@ -2,6 +2,7 @@ import React, { Component } from 'react' // importa libreria de react
 
 import Clases, { Clase0 } from './paginas/Clases'
 import Test from './paginas/test'
+import Indice from './paginas/indice'
 class App extends Component { // crea una clase de componente de react
   constructor(props) { // es algo así como la funcion main de c, pasa al iniciarse
     super(props);
@@ -23,8 +24,12 @@ class App extends Component { // crea una clase de componente de react
          <div className="nav-wrapper">
            <a onClick={() => this.router(Clases)} className="brand-logo">CEESE50</a>
            <ul id="nav-mobile" className="right hide-on-med-and-down">
+             <li><a onClick={()=> this.router(Indice)}>Clases</a></li>
+
              <li><a onClick={()=> this.router(Test)}>Sass</a></li>
+
            </ul>
+
          </div>
        </nav>
        <this.state.pagina router={this.router} clase={Clase0}/>
