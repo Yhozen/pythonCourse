@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import Clases, { Clase0, Clase1, Clase2, Clase3, Clase4, Clase5, Clase6, Clase7, Clase8, Clase9 } from './Clases'
 
-
-
-
 class Indice extends Component {
   render() {
     return (
