@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import Clases, { Clase0 } from './Clases'
+import Clases, { Clase0, Clase1, Clase2, Clase3, Clase4, Clase5, Clase6, Clase7, Clase8, Clase9 } from './Clases'
+
+
 
 
 class Indice extends Component {
@@ -19,17 +21,6 @@ class Indice extends Component {
           </div>
         </div>
 
-        <div className="col s4">
-        <div className="card red lighten-1">
-            <div className="card-content white-text">
-              <span className="card-title">{Clase1.title}</span>
-              <p>{Clase1.brief}</p>
-            </div>
-            <div className="card-action">
-              <a>Ir a la clase 1!</a>
-            </div>
-          </div>
-        </div>
 
         <div className="col s4">
         <div className="card red lighten-1">
