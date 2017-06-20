@@ -2,14 +2,17 @@
   overflow-y: scroll;
   height: 600px;
 }
-
-body {
-     display: flex;
-     min-height: 30vh;
-     flex-direction: column;
+html, body {
+  height: 100% !important;
+}
+#root {
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
  }
+
  main {
-     flex: 1 0 auto;
+   flex: 1 0 auto;
  }
 pre {
     white-space: pre-wrap;       /* Since CSS 2.1 */

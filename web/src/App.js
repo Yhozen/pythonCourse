@@ -21,23 +21,26 @@ class App extends Component { // crea una clase de componente de react
     console.log('Aguante Servicentro!')
     return (
       <div>
-        <nav>
-         <div className="nav-wrapper">
-           <a onClick={() => this.router(<Clases clase={Clase0}/>)} className="brand-logo">CEESE50</a>
-           <ul id="nav-mobile" className="right hide-on-med-and-down">
+      <header>
+          <nav>
+           <div className="nav-wrapper">
+             <a onClick={() => this.router(<Portada router={this.router}/>)} className="brand-logo">CEESE50</a>
+             <ul id="nav-mobile" className="right hide-on-med-and-down">
 
-             <li><a onClick={()=> this.router(<Portada router={this.router}/>)}>Inicio</a></li>
+               <li><a onClick={()=> this.router(<Portada router={this.router}/>)}>Inicio</a></li>
 
-             <li><a onClick={()=> this.router(<Indice router={this.router}/>)}>Clases</a></li>
+               <li><a onClick={()=> this.router(<Indice router={this.router}/>)}>Clases</a></li>
 
-             <li><a onClick={()=> this.router(<Test/>)}>Test</a></li>
+               <li><a onClick={()=> this.router(<Test/>)}>Test</a></li>
 
-           </ul>
+             </ul>
 
-         </div>
-       </nav>
-       {this.state.pagina }
-       <body></body>
+           </div>
+         </nav>
+       </header>
+       <main>
+          {this.state.pagina }
+       </main>
        <footer className="page-footer">
           <div className="container">
             <div className="row">

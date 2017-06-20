@@ -1,135 +1,79 @@
 import React, { Component } from 'react'
-import Clases, { Clase0, Clase1, Clase2, Clase3, Clase4, Clase5, Clase6, Clase7, Clase8, Clase9 } from './Clases'
+import $ from 'jquery'
+import Clases, { listaClases } from './Clases'
+
+let datos = {}
+listaClases.map(clase => {
+  clase.tags.map(tag => {
+    datos[tag] = []
+  })
+})
+listaClases.map(clase => {
+  clase.tags.map(tag => {
+    datos[tag].push(clase);
+  })
+})
 
 class Indice extends Component {
+  constructor(props) { // es algo así como la funcion main de c, pasa al iniciarse
+    super(props);
+    this.state = {
+      listaClases: listaClases,
+    }
+  }
+  busca(event) {
+    let { value } = event.target
+    if (value == '') {
+      this.setState({listaClases})
+    } else {
+      let { length } = value
+      let devolver = []
+      let llaves = Object.keys(datos)
+      llaves.map(llave => {
+        console.log(llave.slice(0, length))
+        if (llave.slice(0, length) == value) {
+          devolver.push(datos[llave][0])
+        }
+      })
+      console.log(devolver)
+      this.setState({listaClases: devolver})
+    }
+  }
   render() {
+    let color = 'lighten-1'
     return (
+      <div>
       <div className="row">
-
-        <div className="col s4">
-        <div className="card red lighten-1">
-            <div className="card-content white-text">
-              <span className="card-title">{Clase0.title}</span>
-              <p>{Clase0.brief}</p>
-            </div>
-            <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase0}/>)}>Ir a la clase 0!</a>
+        <form className="col s12">
+          <div className="row">
+            <div className="input-field col s6">
+              <i className="material-icons prefix">mode_edit</i>
+              <textarea onChange={this.busca.bind(this)} id="icon_prefix2" className="materialize-textarea"></textarea>
+              <label for="icon_prefix2">Buscar</label>
             </div>
           </div>
-        </div>
-
-        <div className="col s4">
-        <div className="card red lighten-1">
-            <div className="card-content white-text">
-              <span className="card-title">{Clase1.title}</span>
-              <p>{Clase1.brief}</p>
-            </div>
-            <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase1}/>)}> Ir a la clase 1!</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="col s4">
-        <div className="card red lighten-1">
-            <div className="card-content white-text">
-              <span className="card-title">{Clase2.title}</span>
-              <p>{Clase2.brief}</p>
-            </div>
-            <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase2}/>)}> Ir a la clase 2!</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="col s4">
-        <div className="card red lighten-1">
-            <div className="card-content white-text">
-              <span className="card-title">{Clase3.title}</span>
-              <p>{Clase3.brief}</p>
-            </div>
-            <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase3}/>)}> Ir a la clase 3!</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="col s4">
-        <div className="card red lighten-1">
-            <div className="card-content white-text">
-              <span className="card-title">{Clase4.title}</span>
-              <p>{Clase4.brief}</p>
-            </div>
-            <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase4}/>)}>Ir a la clase 4!</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="col s4">
-        <div className="card red lighten-1">
-            <div className="card-content white-text">
-              <span className="card-title">{Clase5.title}</span>
-              <p>{Clase5.brief}</p>
-            </div>
-            <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase5}/>)}> Ir a la clase 5!</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="col s4">
-        <div className="card red lighten-1">
-            <div className="card-content white-text">
-              <span className="card-title">{Clase6.title}</span>
-              <p>{Clase6.brief}</p>
-            </div>
-            <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase6}/>)}> Ir a la clase 6!</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="col s4">
-        <div className="card red lighten-1">
-            <div className="card-content white-text">
-              <span className="card-title">{Clase7.title}</span>
-              <p>{Clase7.brief}</p>
-            </div>
-            <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase7}/>)}>Ir a la clase 7!</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="col s4">
-        <div className="card red lighten-1">
-            <div className="card-content white-text">
-              <span className="card-title">{Clase8.title}</span>
-              <p>{Clase8.brief}</p>
-            </div>
-            <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase8}/>)}> Ir a la clase 8!</a>
-            </div>
-          </div>
-        </div>
-
-        <div className="col s4">
-        <div className="card red lighten-1">
-            <div className="card-content white-text">
-              <span className="card-title">{Clase9.title}</span>
-              <p>{Clase9.brief}</p>
-            </div>
-            <div className="card-action">
-              <a onClick={() => this.props.router(<Clases clase={Clase9}/>)}> Ir a la clase 9!</a>
-            </div>
-          </div>
-        </div>
-
+        </form>
       </div>
 
-
-
+        <div className="row">
+        { this.state.listaClases.map((clase, i) => {
+            return (
+              <div className="col s4">
+              <div className="card red {color}">
+                  <div className="card-content white-text">
+                    <span className="card-title">{clase.title}</span>
+                    <p>{clase.brief}</p>
+                  </div>
+                  <div className="card-action">
+                    <a onClick={() => this.props.router(<Clases clase={clase}/>)}>Ir a la clase!</a>
+                  </div>
+                </div>
+              </div>
+            )
+          })
+        }
+        </div>
+      </div>
     );
   }
 }
