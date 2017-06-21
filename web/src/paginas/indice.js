@@ -44,17 +44,16 @@ class Indice extends Component {
     let color = 'lighten-1'
     return (
       <div>
-      <div className="row">
-        <form className="col s12">
-          <div className="row">
-            <div className="input-field col s6">
-              <i className="material-icons prefix">mode_edit</i>
-              <textarea onChange={this.busca.bind(this)} id="icon_prefix2" className="materialize-textarea"></textarea>
-              <label for="icon_prefix2">Buscar</label>
-            </div>
-          </div>
-        </form>
-      </div>
+      <div className="nav-wrapper container">
+         <form>
+           <div className="input-field">
+             <input onChange={this.busca.bind(this)} id="search" type="search" required/>
+             <label className="label-icon" for="search"><i className="material-icons">search</i></label>
+             <i className="material-icons">close</i>
+           </div>
+         </form>
+       </div>
+
 
         <div className="row">
         { this.state.listaClases.map((clase, i) => {
@@ -80,3 +79,14 @@ class Indice extends Component {
 }
 
 export default Indice;
+// <div className="row">
+//   <form className="col s12">
+//     <div className="row">
+//       <div className="input-field col s6">
+//         <i className="material-icons prefix">mode_edit</i>
+//         <textarea  id="icon_prefix2" className="materialize-textarea"></textarea>
+//         <label for="icon_prefix2">Buscar</label>
+//       </div>
+//     </div>
+//   </form>
+// </div>
