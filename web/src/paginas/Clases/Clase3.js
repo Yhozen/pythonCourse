@@ -1,7 +1,7 @@
 const clase3 = {
   title: 'Clase 3: ',
   tags: ['funciones', 'funcion', ],
-  brief:``,
+  brief:`Aprenderas a crear funciones que te serviran para ahorrar lineas de codigos y no repetirlas.`,
   text: `Funciones
 
 -Para crear una función se debe tener en consideración lo siguiente:

@@ -1,7 +1,7 @@
 const clase6 = {
   title: 'Clase 6: ',
   tags: ['bubble', 'sort', 'merge', 'ordenamiento'],
-  brief:``,
+  brief:`Esta clase es la continuacion de la clase 5, por lo que seguiremos aprendiendo a ordenar conjuntos`,
   text: `ALGORITMOS DE ORDENAMIENTO (parte 2)
 
 Bubble Sort → Es un algoritmo usado para ordenar una secuencia de números

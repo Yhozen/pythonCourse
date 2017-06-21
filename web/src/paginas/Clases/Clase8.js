@@ -1,7 +1,7 @@
 const clase8 = {
   title: 'Clase 8: ',
   tags: ['punteros', 'swap'],
-  brief:``,
+  brief:`Aqui aprenderas punteros y podras hacer un swap en la variable original y no en una copia`,
   text: `Punteros
 Un puntero es una variable que contiene la dirección de memoria de otra variable.
 Los punteros permiten código más compacto y eficiente; utilizándolos en forma

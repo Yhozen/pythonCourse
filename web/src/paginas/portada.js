@@ -7,8 +7,8 @@ class Portada extends Component {
     <div className="row">
      <div className="section">
       <div className="row">
-       <div className="col s2 offset-s5">
-        <a onClick={()=> this.props.router(<Indice/>)} className="btn-large waves-effect waves-light red">EMPEZAR</a>
+       <div className="col s4 offset-s4">
+        <h1> Bienvenido al portal del conocimiento</h1>
        </div>
       </div>
      </div>
@@ -24,9 +24,9 @@ class Portada extends Component {
        <p>También podrás aplicar lo aprendido con diversos ejercicios</p>
      </div>
      <div className="col s4">
-       <h6>Practica!</h6>
-       <i className="medium material-icons">grade</i>
-       <p>También podrás aplicar lo aprendido con diversos ejercicios</p>
+       <h6>Desafiate!</h6>
+       <i className="medium material-icons">trending_up</i>
+       <p>Encontraras dificiles desafios, pero lo lograras</p>
      </div>
      </div>
 

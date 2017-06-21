@@ -22,7 +22,8 @@ class Indice extends Component {
     }
   }
   busca(event) {
-    let { value } = event.target
+    let value = event.target.value.toLowerCase()
+
     if (value == '') {
       this.setState({listaClases})
     } else {

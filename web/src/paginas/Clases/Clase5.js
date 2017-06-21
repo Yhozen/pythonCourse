@@ -1,7 +1,8 @@
 const clase5 = {
   title: 'Clase 5: ',
   tags: ['swap', 'algoritmo', 'ordenamiento', 'sort'],
-  brief:``,
+  brief:`Aprenderas a ordenar conjuntos
+  de datos en un arreglo usando cambio de posición`,
   text: `Tema 1: SWAP
 
 Swap → Permite hacer intercambio (de variables?)

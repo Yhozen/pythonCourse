@@ -1,7 +1,7 @@
 const clase2 = {
   title: 'Clase 2: ',
   tags: ['while', 'arreglos', 'iteraciones'],
-  brief:``,
+  brief:`Aqui aprenderas un nuevo ciclo, en el cual su termino sera definido por la condicion que necesites. Ademas encontraras la manera de almacenar varias variables en una`,
   text: `Tema 1:
 
 Expresiones booleanas (TRUE o FALSE)

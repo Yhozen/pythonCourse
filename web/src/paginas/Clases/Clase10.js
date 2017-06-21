@@ -1,7 +1,7 @@
 const clase10 = {
   title: 'Clase 10: ',
   tags: ['archivos'],
-  brief:``,
+  brief:`Aprenderas a crear, escribir y leer, dentro de un archivo de texto`,
   text: `ARCHIVOS
 Lectura de archivos:
       Abrir archivo: Los archivos pueden ser abiertos para lectura, escritura o insersión. Para ello debemos especificar que queremos hacer.
