@@ -44,6 +44,7 @@ class Clases extends Component { // crea una clase de componente de react
                 </div>
               </div>
                <button className="waves-effect waves-light btn" type="submit" value="Submit" >COMPILAR</button>
+               <button className="waves-effect waves-light btn" onClick={() => alert('hola')} >HECHO </button>
             </form>
             <div className="col s4">
               <h5>Consola</h5>
