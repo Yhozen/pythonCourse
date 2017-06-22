@@ -1,5 +1,6 @@
 const clase1 = {
   title: 'Clase 1: ',
+  n: 1,
   tags: ['scanf', 'condicionales', 'signos', 'if', 'for', 'iteraciones', 'ciclo'],
   brief: `Aquí aprenderás a crear ciclos de iteraciones, los usos de condicionales, entre otras cosas. lo que será muy útil para tus siguientes programas`,
   text: `SCANF

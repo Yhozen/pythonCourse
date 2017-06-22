@@ -1,5 +1,6 @@
 const clase6 = {
   title: 'Clase 6: ',
+  n: 6,
   tags: ['bubble', 'sort', 'merge', 'ordenamiento'],
   brief:`Esta clase es la continuación de la clase 5, por lo que seguiremos aprendiendo a ordenar conjuntos`,
   text: `ALGORITMOS DE ORDENAMIENTO (parte 2)

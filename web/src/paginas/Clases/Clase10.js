@@ -1,5 +1,6 @@
 const clase10 = {
   title: 'Clase 10: ',
+  n: 10,
   tags: ['archivos'],
   brief:`Aprenderás a crear, escribir y leer, dentro de un archivo de texto`,
   text: `ARCHIVOS

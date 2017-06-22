@@ -62,7 +62,7 @@ class Indice extends Component {
                     <p>{clase.brief}</p>
                   </div>
                   <div className="card-action cyan darken-3 ">
-                    <a onClick={() => this.props.router(<Clases clase={clase}/>)}>Ir a la clase!</a>
+                    <a onClick={() => this.props.router(<Clases user={this.props.user} clase={clase}/>)}>Ir a la clase!</a>
                   </div>
                 </div>
               </div>

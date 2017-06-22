@@ -1,5 +1,6 @@
 const clase5 = {
   title: 'Clase 5: ',
+  n: 5,
   tags: ['swap', 'algoritmo', 'ordenamiento', 'sort'],
   brief:`Aprenderás a ordenar conjuntos
   de datos en un arreglo usando cambio de posición`,

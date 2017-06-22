@@ -1,5 +1,6 @@
 const clase8 = {
   title: 'Clase 8: ',
+  n: 8,
   tags: ['punteros', 'swap', 'memoria'],
   brief:`Aquí aprenderás punteros y podrás hacer un swap en la variable original y no en una copia`,
   text: `Punteros

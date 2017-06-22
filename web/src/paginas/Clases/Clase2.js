@@ -1,5 +1,6 @@
 const clase2 = {
   title: 'Clase 2: ',
+  n: 2,
   tags: ['while', 'arreglos', 'iteraciones', 'ciclos'],
   brief:`Aquí aprenderas un nuevo ciclo, en el cual su termino será definido por la condición que necesites. Además encontrarás la manera de almacenar varias variables en una`,
   text: `Tema 1:

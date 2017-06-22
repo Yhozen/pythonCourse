@@ -4,22 +4,29 @@ class Estadisticas extends Component {
   constructor() {
     super()
     this.state = {
-      nombre: ['']
+      data: [],
     }
   }
   componentWillMount() {
     const nameRef = this.props.database.ref().child('vistos').child(this.props.user.uid)
     nameRef.on('value', snapshot => {
-     this.setState({
-       nombre: snapshot.val()
-     })
+      let data = snapshot.val()
+      console.log()
+      let llaves = Object.keys(data)
+      console.log(llaves)
+      let n = llaves.length - 1
+      let arreglo = data[llaves[n]]
+      console.log(arreglo)
+      this.setState({
+       data: arreglo
+      })
    })
   }
   render() {
     return (
     <div className="row">
-    <p>Haz hecho: </p>
-      {this.state.nombre.map(clase => {
+      <h5>Haz hecho: </h5>
+      {this.state.data.map(clase => {
         return (
           <p>Clase {clase}</p>
         )

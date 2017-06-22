@@ -1,5 +1,6 @@
 const clase7 = {
   title: 'Clase 7: ',
+  n: 7,
   tags: ['recursion', 'funciones'],
   brief:`Aqui aprenderás funciones recursivas`,
   text: `-Recursión → La recursión es cuando una función se llama así misma.

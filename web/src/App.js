@@ -26,13 +26,13 @@ class App extends Component { // crea una clase de componente de react
 
   login(email, pass) {
     auth.signInWithEmailAndPassword(email, pass).then(user => {
-      this.setState({user}, () => this.router(<Indice router={this.router}/>))
+      this.setState({user}, () => this.router(<Indice user={this.state.user} router={this.router}/>))
     })
   }
   signUp(email, pass, passconf) {
     if (pass == passconf) {
       auth.createUserWithEmailAndPassword(email, pass).then(user => {
-        this.setState({user}, () => this.router(<Indice router={this.router}/>))
+        this.setState({user}, () => this.router(<Indice user={this.state.user} router={this.router}/>))
       })
     } else {
       alert('contraseña no coincide')
@@ -40,6 +40,7 @@ class App extends Component { // crea una clase de componente de react
   }
   signOut() {
     auth.signOut().then(() => this.setState({user: ''}))
+    this.router(<Portada/>)
   }
   render() {
     console.log('Aguante Servicentro!')
@@ -53,9 +54,9 @@ class App extends Component { // crea una clase de componente de react
 
                <li><a onClick={()=> this.router(<Portada />)}>Inicio</a></li>
 
-               <li><a onClick={()=> this.router(<Indice router={this.router}/>)}>Clases</a></li>
+               <li><a onClick={()=> this.router(<Indice user={this.state.user} router={this.router}/>)}>Clases</a></li>
 
-               <li><a onClick={()=> this.router(<Clases clase={Ejercicios}/>)}>Ejercicios</a></li>
+               <li><a onClick={()=> this.router(<Clases  clase={Ejercicios}/>)}>Ejercicios</a></li>
 
                <li><a onClick={()=> this.router(<Usuario database={database} signOut={this.signOut} user={this.state.user} login={this.login} signUp={this.signUp}/>)}>{this.state.user ? this.state.user.email : 'Usuario' }</a></li>
              </ul>

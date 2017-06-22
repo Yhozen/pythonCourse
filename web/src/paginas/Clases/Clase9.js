@@ -1,5 +1,6 @@
 const clase9 = {
   title: 'Clase 9: ',
+  n: 9,
   tags: ['estructuras'],
   brief:`Aqui aprenderás a usar un conjunto de datos en forma de estructura`,
   text: `ESTRUCTURAS

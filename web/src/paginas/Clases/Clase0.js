@@ -1,5 +1,6 @@
 const clase0 = {
   title: 'Clase 0: Introducción',
+  n: 0,
   tags: ['funciones', 'variables', 'básico', 'librerias', 'hello', 'world', 'main', 'tipo', 'datos'],
   brief:`Este es el punto de partida. Aprenderás lo más básico de la programación.`,
   text: `¿Qué es una función?
