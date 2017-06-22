@@ -5,10 +5,10 @@ class Portada extends Component {
   render() {
     return (
     <div className="row">
-     <div className="section">
+     <div className="section jumbotron">
       <div className="row">
        <div className="col s4 offset-s4">
-        <h1> Bienvenido al portal del conocimiento</h1>
+        <h1 > Bienvenido al portal del conocimiento</h1>
        </div>
       </div>
      </div>
@@ -26,7 +26,7 @@ class Portada extends Component {
      <div className="col s4">
        <h6>Desafiate!</h6>
        <i className="medium material-icons">trending_up</i>
-       <p>Encontraras dificiles desafios, pero lo lograras</p>
+       <p>Encontraras dificiles desafíos... pero lo lograras!</p>
      </div>
      </div>
 

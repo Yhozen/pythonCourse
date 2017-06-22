@@ -41,7 +41,6 @@ class Indice extends Component {
     }
   }
   render() {
-    let color = 'lighten-1'
     return (
       <div>
       <div className="nav-wrapper container">
@@ -59,12 +58,12 @@ class Indice extends Component {
         { this.state.listaClases.map((clase, i) => {
             return (
               <div className="col s4">
-              <div className="card red {color}">
+              <div className="card cyan lighten-3">
                   <div className="card-content white-text">
                     <span className="card-title">{clase.title}</span>
                     <p>{clase.brief}</p>
                   </div>
-                  <div className="card-action">
+                  <div className="card-action cyan darken-3 ">
                     <a onClick={() => this.props.router(<Clases clase={clase}/>)}>Ir a la clase!</a>
                   </div>
                 </div>

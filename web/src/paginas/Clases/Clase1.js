@@ -1,7 +1,7 @@
 const clase1 = {
   title: 'Clase 1: ',
-  tags: ['scanf', 'condicionales', 'signos', 'if', 'for', 'iteraciones'],
-  brief: `Aqui aprenderas a crear ciclos de iteraciones, los usos de condicionales, entre otras cosas. lo que sera muy util para tus siguientes programas`,
+  tags: ['scanf', 'condicionales', 'signos', 'if', 'for', 'iteraciones', 'ciclo'],
+  brief: `Aquí aprenderás a crear ciclos de iteraciones, los usos de condicionales, entre otras cosas. lo que será muy útil para tus siguientes programas`,
   text: `SCANF
 La función scanf() se utiliza principalmente para pedir información al usuario.
 Por ejemplo:

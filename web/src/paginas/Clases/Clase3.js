@@ -1,11 +1,11 @@
 const clase3 = {
   title: 'Clase 3: ',
   tags: ['funciones', 'funcion', ],
-  brief:`Aprenderas a crear funciones que te serviran para ahorrar lineas de codigos y no repetirlas.`,
+  brief:`Aprenderás a crear funciones que te serviran para ahorrar lineas de códigos y no repetirlas.`,
   text: `Funciones
 
 -Para crear una función se debe tener en consideración lo siguiente:
-Tener en único nombre.
+Tener un único nombre.
 Debe aclarar un tipo de dato, si retorna o no un valor, sino lo hace debe emplear void.
 Debe indicar si recibe valores (parámetros) y de que tipo.
 

@@ -1,7 +1,7 @@
 const clase9 = {
   title: 'Clase 9: ',
   tags: ['estructuras'],
-  brief:`Aqui aprenderas a usar un conjunto de datos en forma de estructura`,
+  brief:`Aqui aprenderás a usar un conjunto de datos en forma de estructura`,
   text: `ESTRUCTURAS
 Struct  Una estructura de datos es una forma de organizar un conjunto de datos elementales con el objeto de facilitar su manipulación.
 La estructura de datos define la organización e interrelación de éstos y un conjunto de operaciones que se pueden realizar sobre ellos

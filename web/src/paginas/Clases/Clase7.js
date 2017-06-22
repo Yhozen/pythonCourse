@@ -1,7 +1,7 @@
 const clase7 = {
   title: 'Clase 7: ',
-  tags: ['recursion'],
-  brief:`Aqui aprenderas funciones recursivas`,
+  tags: ['recursion', 'funciones'],
+  brief:`Aqui aprenderás funciones recursivas`,
   text: `-Recursión → La recursión es cuando una función se llama así misma.
  La recursión cuenta con:
  1) CASO BASE: Condición de término.

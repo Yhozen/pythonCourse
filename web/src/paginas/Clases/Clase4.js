@@ -1,7 +1,7 @@
 const clase4 = {
   title: 'Clase 4: ',
   tags: ['busqueda', 'lineal', 'binaria',],
-  brief:`En este clase aprenderas como buscar un elemento dentro de un conjunto`,
+  brief:`En este clase aprenderás como buscar un elemento dentro de un conjunto`,
   text: `Busqueda Lineal  → La búsqueda lineal permite encontrar elementos dentro de un conjunto. Este tipo de búsqueda consiste básicamente en buscar un elemento de manera secuencial. Entonces vamos preguntando si el elemento que buscamos es igual al primero, al segundo, al tercero… (Así hasta encontrar el número que buscamos)
 
 Busqueda Binaria  la búsqueda binaria permite encontrar elementos dentro de un conjunto previamente ordenado
