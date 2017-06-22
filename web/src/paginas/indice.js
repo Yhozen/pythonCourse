@@ -3,23 +3,21 @@ import $ from 'jquery'
 import Clases, { listaClases } from './Clases'
 
 let datos = {}
+
 listaClases.map(clase => {
   clase.tags.map(tag => {
-    datos[tag] = []
-  })
-})
-listaClases.map(clase => {
-  clase.tags.map(tag => {
-    datos[tag].push(clase);
+    if (datos[tag]) {
+      datos[tag].push(clase)
+    } else {
+      datos[tag] = [clase]
+    }
   })
 })
 
 class Indice extends Component {
   constructor(props) { // es algo así como la funcion main de c, pasa al iniciarse
-    super(props);
-    this.state = {
-      listaClases: listaClases,
-    }
+    super(props)
+    this.state = { listaClases }
   }
   busca(event) {
     let value = event.target.value.toLowerCase()
@@ -78,14 +76,3 @@ class Indice extends Component {
 }
 
 export default Indice;
-// <div className="row">
-//   <form className="col s12">
-//     <div className="row">
-//       <div className="input-field col s6">
-//         <i className="material-icons prefix">mode_edit</i>
-//         <textarea  id="icon_prefix2" className="materialize-textarea"></textarea>
-//         <label for="icon_prefix2">Buscar</label>
-//       </div>
-//     </div>
-//   </form>
-// </div>

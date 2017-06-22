@@ -1,6 +1,6 @@
 const clase3 = {
   title: 'Clase 3: ',
-  tags: ['funciones', 'funcion', ],
+  tags: ['funciones', 'declaracion'],
   brief:`Aprenderás a crear funciones que te serviran para ahorrar lineas de códigos y no repetirlas.`,
   text: `Funciones
 

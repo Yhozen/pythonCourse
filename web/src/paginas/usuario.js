@@ -10,7 +10,10 @@ const config = {
   messagingSenderId: "163822376534"
 }
 firebase.initializeApp(config)
-
+const database = firebase.database()
+const auth = firebase.auth()
+// auth.signInWithEmailAndPassword(email, pass)
+// auth.createUserWithEmailAndPassword(email, pass)
 
 class Usuario extends Component {
   constructor () {
@@ -20,7 +23,7 @@ class Usuario extends Component {
     }
   }
   componentWillMount() {
-    const nameRef = firebase.database().ref().child('object').child('name')
+    const nameRef = database.ref().child('object').child('name')
     nameRef.on('value', snapshot => {
       this.setState({
         nombre: snapshot.val()
