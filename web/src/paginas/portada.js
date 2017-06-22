@@ -8,7 +8,9 @@ class Portada extends Component {
      <div className="section jumbotron">
       <div className="row">
        <div className="col s4 offset-s4">
-        <h1 > Bienvenido al portal del conocimiento</h1>
+        <h1 className="center-align" > LO </h1>
+        <h1 className="center-align"> DAMOS </h1>
+        <h1 className="center-align"> VUELTA </h1>
        </div>
       </div>
      </div>

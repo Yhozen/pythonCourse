@@ -10,10 +10,14 @@ Para implementar este algoritmo se compara el elemento a buscar con un elemento 
 
 EJERCICIO:
 1. Escribe el código de un programa que cree arreglo de 100 números enteros
-generados de manera aleatoria y le pregunte al usuario por un número a buscar. Si el
-número se encuentra en el arreglo, se debe indicar su posición. Sino se encuentra, se
-debe desplegar un mensaje con esta información. ¿Qué tipo de búsqueda (lineal o
-binaria) tiene sentido implementar en este caso?
+generados de manera aleatoria.
+Pista: Para esto ocupa rand()%N
+Esto te entrega valores aleatorias de 0 a n-1
+Ej: int x= rand()%10;
+Este te entregara valores del 0 al 9.)
+y luego crea una variable con un nuemero.
+ Si el número se encuentra en el arreglo, se debe indicar su posición. Sino se encuentra, se
+debe desplegar un mensaje con esta información.
 2. Escribe el código de un programa que usa búsqueda binaria para buscar un número
 en un arreglo de números ordenados.`
 }

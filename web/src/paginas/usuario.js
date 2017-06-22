@@ -1,39 +1,82 @@
 import React, { Component } from 'react'
-import * as firebase from 'firebase'
-
-const config = {
-  apiKey: "AIzaSyCCjnc1Ri6KAaWaT7R1oyI88EcINEeuINc",
-  authDomain: "lodamosvuelta-64d7a.firebaseapp.com",
-  databaseURL: "https://lodamosvuelta-64d7a.firebaseio.com",
-  projectId: "lodamosvuelta-64d7a",
-  storageBucket: "lodamosvuelta-64d7a.appspot.com",
-  messagingSenderId: "163822376534"
-}
-firebase.initializeApp(config)
-const database = firebase.database()
-const auth = firebase.auth()
-// auth.signInWithEmailAndPassword(email, pass)
-// auth.createUserWithEmailAndPassword(email, pass)
+import Estadisticas from './estadisticas'
 
 class Usuario extends Component {
   constructor () {
     super()
     this.state = {
-      nombre: 'valeql'
+      nombre: '',
+      email: '',
+      pass: '',
+      passconf: '',
+      login: {
+        val: true,
+        text1: 'Entrar',
+        text2: 'Todavia no tengo cuenta'
+      },
     }
   }
   componentWillMount() {
-    const nameRef = database.ref().child('object').child('name')
-    nameRef.on('value', snapshot => {
-      this.setState({
-        nombre: snapshot.val()
-      })
-    })
+  }
+
+  changeLogin() {
+    if (this.state.login.val) {
+      this.setState({login: {
+        val: false,
+        text1: 'Registrarse',
+        text2: 'Ya tengo cuenta'
+      }})
+    } else {
+      this.setState({login: {
+        val: true,
+        text1: 'Entrar',
+        text2: 'Todavia no tengo cuenta'
+      }})
+    }
+  }
+  submitData() {
+    if (this.state.login.val) {
+      let { email, pass } = this.state
+      this.props.login(email, pass)
+    } else {
+      let { email, pass, passconf } = this.state
+      this.pros.signUp(email, pass, passconf)
+    }
   }
   render() {
+    const confirmPass = (
+        <div className="row">
+          <div className="input-field col s12">
+            <input onChange={event => this.setState({passconf: event.target.value})} id="password2" type="password" className="validate"/>
+            <label for="password2">Repita contraseña</label>
+          </div>
+        </div>
+      )
     return (
     <div className="container">
-      <p>test {this.state.nombre}</p>
+      <h3>{this.props.user? 'Salir' : this.state.login.text1}</h3>
+      {this.props.user ? <Estadisticas database={this.props.database} user={this.props.user} signOut={this.props.signOut}/>  : (
+        <div className="row">
+          <form className="col s12" >
+          <div className="row">
+            <div className="input-field col s12">
+              <input onChange={event => this.setState({email: event.target.value})} id="email" type="email" className="validate"/>
+              <label for="email">Email</label>
+            </div>
+          </div>
+            <div className="row">
+              <div className="input-field col s12">
+                <input onChange={event => this.setState({pass: event.target.value})} id="password" type="password" className="validate"/>
+                <label for="password">Contraseña</label>
+              </div>
+            </div>
+            {!this.state.login.val && confirmPass}
+            <a onClick={this.submitData.bind(this)} className="col s12 waves-effect waves-light btn">{this.state.login.text1}</a>
+            <a onClick={this.changeLogin.bind(this)} className="col s12 waves-effect waves-light btn">{this.state.login.text2}</a>
+          </form>
+        </div>
+      )}
+      <p>{this.props.user.email}</p>
     </div>
     );
   }

@@ -83,8 +83,10 @@ Acción ( puede ser un printf, o una suma, etc.)
 Aquí el “i”, actuara como contador, es decir partirá en cero y cada vez que se ejecute la acción se le sumará 1 a i (i++) y volverá a ejecutarla hasta que se cumpla la condición (i<10), entonces cada vez que se cumpla la condición (TRUE) ejecutara el código de la acción, por el contrario si la condición no se cumple (FALSE), no se ejecuta el código.
 
 EJERCICIO:
-Pregunte el nombre a 10 personas y luego
-muestre el saludo para cada una de ellas.
+Cree variables de dos nombres de personas,
+luego cree la edad de cada uno.
+Cree un ciclo for que muestre al usuario la edad que tendra cada cierta cantidad de años(Por ejemplo cada 6 años) y ademas mostrando el año en el que tendra esos años, hasta los 100 años.
+Ademas cree un if , para que si su edad es menor a 18 años, diga "no preocupes por la edad aún."
 `
 }
 

@@ -1,5 +1,7 @@
 import React, { Component } from 'react' // importa libreria de react
 
+import { database, auth } from './firebase'
+
 import Clases from './paginas/Clases'
 import Indice from './paginas/indice'
 import Portada from './paginas/portada'
@@ -9,15 +11,36 @@ class App extends Component { // crea una clase de componente de react
   constructor(props) { // es algo así como la funcion main de c, pasa al iniciarse
     super(props);
     this.state = {
-      pagina: <Portada />
+      pagina: <Portada />,
+      user: ''
     }
     this.router = this.router.bind(this)
+    this.login = this.login.bind(this)
+    this.signUp = this.signUp.bind(this)
+    this.signOut = this.signOut.bind(this)
   }
 
   router (pagina) {
     this.setState({pagina})
   }
 
+  login(email, pass) {
+    auth.signInWithEmailAndPassword(email, pass).then(user => {
+      this.setState({user}, () => this.router(<Indice router={this.router}/>))
+    })
+  }
+  signUp(email, pass, passconf) {
+    if (pass == passconf) {
+      auth.createUserWithEmailAndPassword(email, pass).then(user => {
+        this.setState({user}, () => this.router(<Indice router={this.router}/>))
+      })
+    } else {
+      alert('contraseña no coincide')
+    }
+  }
+  signOut() {
+    auth.signOut().then(() => this.setState({user: ''}))
+  }
   render() {
     console.log('Aguante Servicentro!')
     return (
@@ -34,7 +57,7 @@ class App extends Component { // crea una clase de componente de react
 
                <li><a onClick={()=> this.router(<Clases clase={Ejercicios}/>)}>Ejercicios</a></li>
 
-               <li><a onClick={()=> this.router(<Usuario/>)}>Usuario</a></li>
+               <li><a onClick={()=> this.router(<Usuario database={database} signOut={this.signOut} user={this.state.user} login={this.login} signUp={this.signUp}/>)}>{this.state.user ? this.state.user.email : 'Usuario' }</a></li>
              </ul>
 
            </div>

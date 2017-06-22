@@ -18,7 +18,7 @@ html {
    flex: 1 0 auto;
  }
 pre {
-    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: pre-wrap;       /* Since CSS 2.1 https://ichef.bbci.co.uk/news/ws/660/amz/worldservice/live/assets/images/2014/09/04/140904193447_programacion_624x351_thinkstock.jpg*/
     white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
     white-space: -pre-wrap;      /* Opera 4-6 */
     white-space: -o-pre-wrap;    /* Opera 7 */
@@ -29,8 +29,9 @@ pre {
   text-shadow: 0px 0px 25px rgba(0, 0, 0, 1);
 }
 .jumbotron {
-  background-image: url("https://ichef.bbci.co.uk/news/ws/660/amz/worldservice/live/assets/images/2014/09/04/140904193447_programacion_624x351_thinkstock.jpg");
+  background-image: url("bg.jpg");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   height: 550px;
 }

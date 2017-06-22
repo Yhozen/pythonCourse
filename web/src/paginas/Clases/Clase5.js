@@ -5,7 +5,7 @@ const clase5 = {
   de datos en un arreglo usando cambio de posición`,
   text: `Tema 1: SWAP
 
-Swap → Permite hacer intercambio (de variables?)
+Swap → Permite hacer intercambio de variables
 Para hacer un intercambio, no se hace directamente entre las dos variables, sino que necesitamos de una variable auxiliar, para explicar como funciona lo haremos a través de un ejemplo
 Ejemplo: Para pasar de 34, 15   ---->  15, 34
  Int x = 34;
@@ -44,7 +44,7 @@ void selectionsort(int * x, int n){
   }}
 
 EJERCICIO:
-Pida al usuario 15 numeros ordenemos de mayor a menor(imprima el resultado)
+Cree un arreglo de 100 nuemero y luego ordenelos de mayor a menor(imprima el resultado)
 `
 }
 
