@@ -5,7 +5,6 @@ class Usuario extends Component {
   constructor () {
     super()
     this.state = {
-      nombre: '',
       email: '',
       pass: '',
       passconf: '',
@@ -15,8 +14,6 @@ class Usuario extends Component {
         text2: 'Todavia no tengo cuenta'
       },
     }
-  }
-  componentWillMount() {
   }
 
   changeLogin() {
@@ -40,7 +37,7 @@ class Usuario extends Component {
       this.props.login(email, pass)
     } else {
       let { email, pass, passconf } = this.state
-      this.pros.signUp(email, pass, passconf)
+      this.props.signUp(email, pass, passconf)
     }
   }
   render() {
@@ -76,7 +73,6 @@ class Usuario extends Component {
           </form>
         </div>
       )}
-      <p>{this.props.user.email}</p>
     </div>
     );
   }

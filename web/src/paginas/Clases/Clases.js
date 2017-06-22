@@ -4,11 +4,29 @@ import $ from 'jquery' // importa libreria jquery, nos sirve para la peticion al
 class Clases extends Component { // crea una clase de componente de react
   constructor(props) { // es algo así como la funcion main de c, pasa al iniciarse
     super(props);
-    this.state = {value: '', compiled: ''} // declara los estados que despues vamos a editar
+    this.state = {
+      value: '',
+      compiled: '',
+    } // declara los estados que despues vamos a editar
     this.handleChange = this.handleChange.bind(this) // esto es un tema propio de js, no es necesario entenderlo pero si
     this.handleSubmit = this.handleSubmit.bind(this) // hacerlo para cada funcion
+    this.hecho = this.hecho.bind(this)
   }
-
+  hecho() {
+    let nameRef = this.props.database.ref().child('vistos').child(this.props.user.uid)
+    let n = this.props.clase.n
+    nameRef.on('value', snapshot => {
+      let data = snapshot.val()
+      if (data) {
+        if (!data.includes(n)) {
+          data.push(n)
+          nameRef.set(data)
+        }
+      } else {
+        nameRef.set([n])
+      }
+   })
+  }
   handleChange(event) { // funcion para guardar
     let { value } = event.target
     this.setState({value})
@@ -44,7 +62,7 @@ class Clases extends Component { // crea una clase de componente de react
                 </div>
               </div>
                <button className="waves-effect waves-light btn" type="submit" value="Submit" >COMPILAR</button>
-               {this.props.user && (<button className="waves-effect waves-light btn" onClick={() => alert(this.props.clase.n)} >HECHO </button> )}
+               {this.props.user && (<button className="waves-effect waves-light btn" onClick={this.hecho} >HECHO </button> )}
             </form>
             <div className="col s4">
               <h5>Consola</h5>

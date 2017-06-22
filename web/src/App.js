@@ -26,13 +26,13 @@ class App extends Component { // crea una clase de componente de react
 
   login(email, pass) {
     auth.signInWithEmailAndPassword(email, pass).then(user => {
-      this.setState({user}, () => this.router(<Indice user={this.state.user} router={this.router}/>))
+      this.setState({user}, () => this.router(<Indice user={this.state.user} database={database} router={this.router}/>))
     })
   }
   signUp(email, pass, passconf) {
     if (pass == passconf) {
       auth.createUserWithEmailAndPassword(email, pass).then(user => {
-        this.setState({user}, () => this.router(<Indice user={this.state.user} router={this.router}/>))
+        this.setState({user}, () => this.router(<Indice user={this.state.user} database={database} router={this.router}/>))
       })
     } else {
       alert('contraseña no coincide')
@@ -54,9 +54,9 @@ class App extends Component { // crea una clase de componente de react
 
                <li><a onClick={()=> this.router(<Portada />)}>Inicio</a></li>
 
-               <li><a onClick={()=> this.router(<Indice user={this.state.user} router={this.router}/>)}>Clases</a></li>
+               <li><a onClick={()=> this.router(<Indice user={this.state.user} database={database} router={this.router}/>)}>Clases</a></li>
 
-               <li><a onClick={()=> this.router(<Clases  clase={Ejercicios}/>)}>Ejercicios</a></li>
+               <li><a onClick={()=> this.router(<Clases clase={Ejercicios}/>)}>Ejercicios</a></li>
 
                <li><a onClick={()=> this.router(<Usuario database={database} signOut={this.signOut} user={this.state.user} login={this.login} signUp={this.signUp}/>)}>{this.state.user ? this.state.user.email : 'Usuario' }</a></li>
              </ul>
@@ -72,7 +72,7 @@ class App extends Component { // crea una clase de componente de react
             <div className="row">
               <div className="col l6 s12">
                 <h5 className="white-text">Quienes Somos</h5>
-                <p className="grey-text text-lighten-4">Somos el grupo 11 de la sección 5. Los más pulentos con puro bow y dembow!</p>
+                <p className="grey-text text-lighten-4">-Christian Amo -Francisca Inostroza<br/> -Axel Kuljis  -Nicolas Manzano  <br/> -Gabriel Pérez     -Valeria Ruiz</p>
               </div>
               <div className="col l4 offset-l2 s12">
                 <h5 className="white-text">Sitios de Interés</h5>

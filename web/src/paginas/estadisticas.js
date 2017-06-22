@@ -4,23 +4,17 @@ class Estadisticas extends Component {
   constructor() {
     super()
     this.state = {
-      data: [],
+      data: [': ninguna'],
     }
   }
   componentWillMount() {
     const nameRef = this.props.database.ref().child('vistos').child(this.props.user.uid)
     nameRef.on('value', snapshot => {
       let data = snapshot.val()
-      console.log()
-      let llaves = Object.keys(data)
-      console.log(llaves)
-      let n = llaves.length - 1
-      let arreglo = data[llaves[n]]
-      console.log(arreglo)
-      this.setState({
-       data: arreglo
-      })
-   })
+      if (data) {
+        this.setState({data})
+      }
+     })
   }
   render() {
     return (
