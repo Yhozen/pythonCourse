@@ -38,7 +38,7 @@ class Clases extends Component { // crea una clase de componente de react
       code:  this.state.value,
        file: 'compiled'
      }
-    $.post("http://localhost:8000/", body, compiled => { // peticion al servidor, de argumento tiene, la direccion, el objeto con el texo y nombre del archivo, y una funcion que se ejecutara cuando reciba una respuesta
+    $.post("http://45.55.80.247:8000/", body, compiled => { // peticion al servidor, de argumento tiene, la direccion, el objeto con el texo y nombre del archivo, y una funcion que se ejecutara cuando reciba una respuesta
       this.setState({compiled}) // guarda la respuesta en el estado compilado para mostrarlo
     })
    }

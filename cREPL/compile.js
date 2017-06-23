@@ -4,7 +4,7 @@ const { writeFileSync, unlinkSync } = require('fs')
 const compileNRun = (file, code) => {
   writeFileSync(`/tmp/${file}.c`,  code)
   let output = ''
-  const gcc = spawnSync('gcc', ['-Wall', `/tmp/${file}.c`, '-o', `/tmp/${file}`, '-lcs50', '-lm'])
+  const gcc = spawnSync('gcc', ['-Wall', `/tmp/${file}.c`, '-o', `/tmp/${file}`, '-lm'])
   if (gcc.status == 0) {
     output += gcc.stdout + '\n'
     const compiled = spawnSync(`/tmp/${file}`)
