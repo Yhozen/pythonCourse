@@ -3,8 +3,8 @@ import Clases, { listaClases } from './Clases'
 
 let datos = {}
 
-listaClases.map(clase => {
-  clase.tags.map(tag => {
+listaClases.forEach(clase => {
+  clase.tags.forEach(tag => {
     if (datos[tag]) {
       datos[tag].push(clase)
     } else {
@@ -27,7 +27,7 @@ class Indice extends React.Component {
       let { length } = value
       let devolver = []
       let llaves = Object.keys(datos)
-      llaves.map(llave => {
+      llaves.forEach(llave => {
         console.log(llave.slice(0, length))
         if (llave.slice(0, length) === value) {
           devolver.push(datos[llave][0])
@@ -60,7 +60,7 @@ class Indice extends React.Component {
                     <p>{clase.brief}</p>
                   </div>
                   <div className='card-action cyan darken-3 '>
-                    <a onClick={() => this.props.router(<Clases user={this.props.user} database={this.props.database} clase={clase} />)}>Ir a la clase!</a>
+                    <a href='clases' onClick={() => this.props.router(<Clases user={this.props.user} database={this.props.database} clase={clase} />)}>Ir a la clase!</a>
                   </div>
                 </div>
               </div>

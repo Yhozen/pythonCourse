@@ -2,27 +2,23 @@ import React from 'react' // importa libreria de react
 
 import { database, auth } from './firebase'
 
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom' /* eslint-disable-line */
+
 import Clases from './paginas/Clases'
 import Indice from './paginas/indice'
 import Portada from './paginas/portada'
-import Ejercicios from './paginas/ejercicios'
+// import Ejercicios from './paginas/ejercicios'
 import Usuario from './paginas/usuario'
 
 class App extends React.Component { // crea una clase de componente de react
   constructor (props) { // es algo así como la funcion main de c, pasa al iniciarse
     super(props)
     this.state = {
-      pagina: <Portada />,
       user: ''
     }
-    this.router = this.router.bind(this)
     this.login = this.login.bind(this)
     this.signUp = this.signUp.bind(this)
     this.signOut = this.signOut.bind(this)
-  }
-
-  router (pagina) {
-    this.setState({ pagina })
   }
 
   login (email, pass) {
@@ -41,33 +37,40 @@ class App extends React.Component { // crea una clase de componente de react
   }
   signOut () {
     auth.signOut().then(() => this.setState({ user: '' }))
-    this.router(<Portada />)
   }
   render () {
-    console.log('Aguante Servicentro!')
     return (
       <div>
         <header>
           <nav>
             <div className='nav-wrapper cyan'>
               <a href='portada' onClick={() => this.router(<Portada />)} className='brand-logo'>#LoDamosVuelta</a>
-              <ul id='nav-mobile' className='right hide-on-med-and-down'>
-
-                <li><a onClick={() => this.router(<Portada />)}>Inicio</a></li>
-
-                <li><a onClick={() => this.router(<Indice user={this.state.user} database={database} router={this.router} />)}>Clases</a></li>
-
-                <li><a onClick={() => this.router(<Clases clase={Ejercicios} />)}>Ejercicios</a></li>
-
-                <li><a onClick={() => this.router(<Usuario database={database} signOut={this.signOut} user={this.state.user} login={this.login} signUp={this.signUp} />)}>{this.state.user ? this.state.user.email : 'Usuario' }</a></li>
-              </ul>
-
             </div>
           </nav>
         </header>
-        <main>
-          {this.state.pagina }
-        </main>
+        <Router>
+          <div>
+            <ul>
+              <li>
+                <Link to='/'> Home </Link>
+              </li>
+              <li>
+                <Link to='/indice'> About </Link>
+              </li>
+              <li>
+                <Link to='/classes'> Team </Link>
+              </li>
+              <li>
+                <Link to='/user'> Usuario </Link>
+              </li>
+            </ul>
+
+            <Route exact path='/' component={Portada} />
+            <Route exact path='/indice' component={Indice} />
+            <Route exact path='/classes' component={Clases} />
+            <Route exact path='/user' component={Usuario} />
+          </div>
+        </Router>
         <footer className='page-footer cyan'>
           <div className='container'>
             <div className='row'>

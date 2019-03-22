@@ -68,8 +68,8 @@ class Usuario extends Component {
                 </div>
               </div>
               {!this.state.login.val && confirmPass}
-              <a onClick={this.submitData.bind(this)} className='col s12 waves-effect waves-light btn'>{this.state.login.text1}</a>
-              <a onClick={this.changeLogin.bind(this)} className='col s12 waves-effect waves-light btn'>{this.state.login.text2}</a>
+              <button onClick={this.submitData.bind(this)} className='col s12 waves-effect waves-light btn'>{this.state.login.text1}</button>
+              <button onClick={this.changeLogin.bind(this)} className='col s12 waves-effect waves-light btn'>{this.state.login.text2}</button>
             </form>
           </div>
         )}
