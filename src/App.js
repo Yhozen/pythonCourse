@@ -2,13 +2,14 @@ import React from 'react' // importa libreria de react
 
 import { database, auth } from './firebase'
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom' /* eslint-disable-line */
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 
 import Clases from './paginas/Clases'
 import Indice from './paginas/indice'
 import Portada from './paginas/portada'
 // import Ejercicios from './paginas/ejercicios'
 import Usuario from './paginas/usuario'
+import NotFoundComponent from './paginas/NotFound'
 
 class App extends React.Component { // crea una clase de componente de react
   constructor (props) { // es algo así como la funcion main de c, pasa al iniciarse
@@ -64,11 +65,13 @@ class App extends React.Component { // crea una clase de componente de react
                 <Link to='/user'> Usuario </Link>
               </li>
             </ul>
-
-            <Route exact path='/' component={Portada} />
-            <Route exact path='/indice' component={Indice} />
-            <Route exact path='/classes' component={Clases} />
-            <Route exact path='/user' component={Usuario} />
+            <Switch>
+              <Route exact path='/' component={Portada} />
+              <Route exact path='/indice' component={Indice} />
+              <Route exact path='/classes' component={Clases} />
+              <Route exact path='/user' component={Usuario} />
+              <Route component={NotFoundComponent} />
+            </Switch>
           </div>
         </Router>
         <footer className='page-footer cyan'>
