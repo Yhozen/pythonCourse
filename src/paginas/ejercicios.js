@@ -40,6 +40,6 @@ const ejercicios = {
   Si el numero obtenido es 10, el digito verificador es k.`
 }
 
-const Ejercicios = (props) => <Clases clase={ejercicios} />
+const Ejercicios = <Clases clase={ejercicios} />
 
 export default Ejercicios

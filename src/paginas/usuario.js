@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import Estadisticas from './estadisticas'
+import Estadisticas from './Estadisticas'
 import { Store } from '../Store'
 import { auth } from '../firebase'
 

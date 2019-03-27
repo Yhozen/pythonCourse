@@ -9,6 +9,7 @@ import Indice from './paginas/Indice'
 import Portada from './paginas/Portada'
 import Usuario from './paginas/Usuario'
 import NotFoundComponent from './paginas/NotFound'
+import DataFeededLesson from './paginas/DataFeededLesson'
 
 const App = (props) => {
   return (
@@ -19,6 +20,7 @@ const App = (props) => {
         <Route exact path='/indice' component={Indice} />
         <Route exact path='/lessons' component={Ejercicios} />
         <Route exact path='/user' component={Usuario} />
+        <Route path='/clases/:id' component={DataFeededLesson} />
         <Route component={NotFoundComponent} />
       </Switch>
       <Footer />
