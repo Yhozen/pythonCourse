@@ -4,7 +4,7 @@ import Clases, { listaClases } from './Clases'
 import NotFound from './NotFound'
 
 const DataFeededLesson = ({ match }) => {
-  if (match.params.id <= listaClases.length && match.params.id >= 0) {
+  if (match.params.id < listaClases.length && match.params.id >= 0) {
     return (
       <Clases clase={listaClases[match.params.id]} />
     )
