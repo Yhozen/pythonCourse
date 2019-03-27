@@ -1,5 +1,5 @@
 import React from 'react'
-import Clases from './Clases/Clases'
+import Clases from './Clases'
 
 const ejercicios = {
   title: 'Ejercicios y desafios',
@@ -40,6 +40,6 @@ const ejercicios = {
   Si el numero obtenido es 10, el digito verificador es k.`
 }
 
-const Ejercicios = <Clases clase={ejercicios} />
+const Ejercicios = () => <Clases clase={ejercicios} />
 
 export default Ejercicios

@@ -40,7 +40,7 @@ const Indice = (props) => {
         <form>
           <div className='input-field'>
             <input onChange={busca} id='search' type='search' required />
-            <label className='label-icon' for='search'><i className='material-icons'>search</i></label>
+            <label className='label-icon' htmlFor='search'><i className='material-icons'>search</i></label>
             <i className='material-icons'>close</i>
           </div>
         </form>
@@ -49,7 +49,7 @@ const Indice = (props) => {
       <div className='row'>
         { state.listaClases.map((clase, i) => {
           return (
-            <div className='col s4'>
+            <div key={Math.random()} className='col s4'>
               <div className='card cyan lighten-3'>
                 <div className='card-content white-text'>
                   <span className='card-title'>{clase.title}</span>
