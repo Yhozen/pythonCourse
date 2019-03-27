@@ -1,3 +1,4 @@
+/* snippet from f/react-hooks-todo-app */
 import { useEffect } from 'react'
 
 const { localStorage } = window
