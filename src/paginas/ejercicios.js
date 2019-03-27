@@ -1,4 +1,7 @@
-const Ejercicios = {
+import React from 'react'
+import Clases from './Clases/Clases'
+
+const ejercicios = {
   title: 'Ejercicios y desafios',
   text: `EJERCICIOS
   1.- Cree un programa que permita hacer la división por restas sucesivas, utilizando recursividad.
@@ -9,7 +12,7 @@ const Ejercicios = {
 
   4. Cree un programa que te diga si la palabra es palindroma o no.
 
-  5. Implemente	un programa de 3 alumnos guardar nombre, nombre de la asignatura y 4 notas. Calcular y mostrar el promedio y la suma de las notas.
+  5. Implemente un programa de 3 alumnos guardar nombre, nombre de la asignatura y 4 notas. Calcular y mostrar el promedio y la suma de las notas.
 
   6. Escribe el código de la función busca_max() que retorna la posición del elemento del arreglo numeros[] con el máximo valor entre las posiciones inicio y final (inclusive).
 
@@ -36,5 +39,7 @@ const Ejercicios = {
   Si el numero obtenido es 11, el digito verificador es cero.
   Si el numero obtenido es 10, el digito verificador es k.`
 }
+
+const Ejercicios = (props) => <Clases clase={ejercicios} />
 
 export default Ejercicios

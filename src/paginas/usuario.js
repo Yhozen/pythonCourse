@@ -1,81 +1,97 @@
-import React, { Component } from 'react'
+import React, { useContext, useState } from 'react'
 import Estadisticas from './estadisticas'
+import { Store } from '../Store'
+import { auth } from '../firebase'
 
-class Usuario extends Component {
-  constructor () {
-    super()
-    this.state = {
-      email: '',
-      pass: '',
-      passconf: '',
-      login: {
-        val: true,
-        text1: 'Entrar',
-        text2: 'Todavia no tengo cuenta'
-      }
-    }
+const Usuario = (props) => {
+  const { state, dispatch } = useContext(Store)
+  const [ passwordField, setPasswordField ] = useState('')
+  const [ emailField, setEmailField ] = useState('')
+  const [ passwordConfField, setPasswordConfField ] = useState('')
+  const [ loginOrRegister, setLoginOrRegister ] = useState({
+    val: true,
+    text1: 'Entrar',
+    text2: 'Todavia no tengo cuenta'
+  })
+
+  const login = async (email, pass) => {
+    const user = await auth.signInWithEmailAndPassword(email, pass)
+    dispatch({ type: 'USER_LOGIN', payload: user })
   }
 
-  changeLogin () {
-    if (this.state.login.val) {
-      this.setState({ login: {
+  const signUp = async (email, pass, passconf) => {
+    if (pass === passconf) {
+      const user = await auth.createUserWithEmailAndPassword(email, pass)
+      dispatch({ type: 'USER_LOGIN', payload: user })
+    } else {
+      console.warn('contraseña no coincide')
+    }
+  }
+  const signOut = async () => {
+    await auth.signOut()
+    dispatch({ type: 'USER_LOGIN', payload: '' })
+  }
+
+  const toggleLoginOrRegister = (e) => {
+    e.preventDefault()
+    if (loginOrRegister.val) {
+      setLoginOrRegister({
         val: false,
         text1: 'Registrarse',
         text2: 'Ya tengo cuenta'
-      } })
+      })
     } else {
-      this.setState({ login: {
+      setLoginOrRegister({
         val: true,
         text1: 'Entrar',
         text2: 'Todavia no tengo cuenta'
-      } })
+      })
     }
   }
-  submitData () {
-    if (this.state.login.val) {
-      let { email, pass } = this.state
-      this.props.login(email, pass)
+
+  const submitData = (e) => {
+    e.preventDefault()
+    if (loginOrRegister.val) {
+      login(emailField, passwordField)
     } else {
-      let { email, pass, passconf } = this.state
-      this.props.signUp(email, pass, passconf)
+      signUp(emailField, passwordField, passwordConfField)
     }
   }
-  render () {
-    const confirmPass = (
-      <div className='row'>
-        <div className='input-field col s12'>
-          <input onChange={event => this.setState({ passconf: event.target.value })} id='password2' type='password' className='validate' />
-          <label for='password2'>Repita contraseña</label>
+
+  const confirmPass = (
+    <div className='row'>
+      <div className='input-field col s12'>
+        <input onChange={event => setPasswordConfField(event.target.value)} id='password2' type='password' className='validate' />
+        <label htmlFor='password2'>Repita contraseña</label>
+      </div>
+    </div>
+  )
+  return (
+    <div className='container'>
+      <h3>{state.user ? 'Salir' : loginOrRegister.text1}</h3>
+      {state.user ? <Estadisticas user={state.user} signOut={signOut} /> : (
+        <div className='row'>
+          <form className='col s12' >
+            <div className='row'>
+              <div className='input-field col s12'>
+                <input onChange={event => setEmailField(event.target.value)} id='email' type='email' className='validate' />
+                <label htmlFor='email'>Email</label>
+              </div>
+            </div>
+            <div className='row'>
+              <div className='input-field col s12'>
+                <input onChange={event => setPasswordField(event.target.value)} id='password' type='password' className='validate' />
+                <label htmlFor='password'>Contraseña</label>
+              </div>
+            </div>
+            {!loginOrRegister.val && confirmPass}
+            <button onClick={submitData} className='col s12 waves-effect waves-light btn'>{loginOrRegister.text1}</button>
+            <button onClick={toggleLoginOrRegister} className='col s12 waves-effect waves-light btn'>{loginOrRegister.text2}</button>
+          </form>
         </div>
-      </div>
-    )
-    return (
-      <div className='container'>
-        <h3>{this.props.user ? 'Salir' : this.state.login.text1}</h3>
-        {this.props.user ? <Estadisticas database={this.props.database} user={this.props.user} signOut={this.props.signOut} /> : (
-          <div className='row'>
-            <form className='col s12' >
-              <div className='row'>
-                <div className='input-field col s12'>
-                  <input onChange={event => this.setState({ email: event.target.value })} id='email' type='email' className='validate' />
-                  <label for='email'>Email</label>
-                </div>
-              </div>
-              <div className='row'>
-                <div className='input-field col s12'>
-                  <input onChange={event => this.setState({ pass: event.target.value })} id='password' type='password' className='validate' />
-                  <label for='password'>Contraseña</label>
-                </div>
-              </div>
-              {!this.state.login.val && confirmPass}
-              <button onClick={this.submitData.bind(this)} className='col s12 waves-effect waves-light btn'>{this.state.login.text1}</button>
-              <button onClick={this.changeLogin.bind(this)} className='col s12 waves-effect waves-light btn'>{this.state.login.text2}</button>
-            </form>
-          </div>
-        )}
-      </div>
-    )
-  }
+      )}
+    </div>
+  )
 }
 
 export default Usuario

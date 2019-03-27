@@ -1,34 +1,33 @@
-import React from 'react'
+import React, { useState, useEffect, useContext } from 'react'
+import { database } from '../firebase'
 
-class Estadisticas extends React.Component {
-  constructor () {
-    super()
-    this.state = {
-      data: [': ninguna']
-    }
-  }
-  componentWillMount () {
-    const nameRef = this.props.database.ref().child('vistos').child(this.props.user.uid)
+import { Store } from '../Store'
+
+const Estadisticas = (props) => {
+  const [ data, setData ] = useState([': ninguna'])
+  const { state } = useContext(Store)
+
+  useEffect(() => {
+    const nameRef = database.ref().child('vistos').child(state.user.uid)
     nameRef.on('value', snapshot => {
-      let data = snapshot.val()
-      if (data) {
-        this.setState({ data })
+      let value = snapshot.val()
+      if (value) {
+        setData(value)
       }
     })
-  }
-  render () {
-    return (
-      <div className='row'>
-        <h5>Haz hecho: </h5>
-        {this.state.data.map(clase => {
-          return (
-            <p>Clase {clase}</p>
-          )
-        })}
-        <button onClick={() => this.props.signOut()} className='col s12 waves-effect waves-light btn'>Salir</button>
-      </div>
-    )
-  }
+  }, [])
+
+  return (
+    <div className='row'>
+      <h5>Haz hecho: </h5>
+      {data.map(clase => {
+        return (
+          <p key={Math.random()}>Clase {clase}</p>
+        )
+      })}
+      <button onClick={() => props.signOut()} className='col s12 waves-effect waves-light btn'>Salir</button>
+    </div>
+  )
 }
 
 export default Estadisticas

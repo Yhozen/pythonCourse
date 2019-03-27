@@ -44,8 +44,9 @@ class Clases extends Component { // crea una clase de componente de react
   }
 
   render () {
+    console.log(this.props)
     return (
-      <div>
+      <>
         <div className='row' onSubmit={this.handleSubmit}>
           <div className='col s4'>
             <h5>{this.props.clase.title}</h5>
@@ -73,7 +74,7 @@ class Clases extends Component { // crea una clase de componente de react
             })}
           </div>
         </div>
-      </div>
+      </>
     )
   }
 }
