@@ -3,6 +3,7 @@ import Clases from './Clases'
 
 const ejercicios = {
   title: 'Ejercicios y desafios',
+  n: 'ejercicios',
   text: `EJERCICIOS
   1.- Cree un programa que permita hacer la división por restas sucesivas, utilizando recursividad.
 
