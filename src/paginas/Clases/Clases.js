@@ -28,9 +28,34 @@ const Clases = (props) => {
     setTextValue(value)
   }
 
-  const handleSubmit = (event) => {
+  const outputFunction = text => {
+    window.outputShit = text
+    if (text !== '\n') {
+      setCompiled(text)
+    }
+  }
+  const handleSubmit = async (event) => {
     event.preventDefault()
-    setCompiled('')
+    const { Sk } = window
+    function builtinRead (x) {
+      if (Sk.builtinFiles === undefined || Sk.builtinFiles['files'][x] === undefined) {
+        throw Error('File not found:')
+      } else {
+        return Sk.builtinFiles['files'][x]
+      }
+    }
+    Sk.pre = 'output'
+    Sk.configure({ output: outputFunction, read: builtinRead })
+    var myPromise = Sk.misceval.asyncToPromise(function () {
+      return Sk.importMainWithBody('<stdin>', false, textValue, true)
+    })
+    myPromise.then(function (mod) {
+      console.log('success')
+      console.log(compiled)
+    },
+    function (err) {
+      console.log(err.toString())
+    })
   }
 
   return (
