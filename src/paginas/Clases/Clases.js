@@ -54,7 +54,7 @@ const Clases = (props) => {
 
     },
     (err) => {
-      console.log(err.toString())
+      setCompiled(err.toString())
     })
   }
 
