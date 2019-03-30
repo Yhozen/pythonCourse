@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react' // importa libreria de react
+import React, { useState, useContext } from 'react'
 import { database } from '../../firebase'
 import { Store } from '../../Store'
 
@@ -6,6 +6,8 @@ const Clases = (props) => {
   const { state: { user } } = useContext(Store)
   const [ compiled, setCompiled ] = useState('')
   const [ textValue, setTextValue ] = useState('')
+
+  let saveOutputs = '' // workaround, because I couldn't synchronize setCompiled
 
   const hecho = () => {
     let nameRef = database.ref().child('vistos').child(user.uid)
@@ -23,18 +25,17 @@ const Clases = (props) => {
     })
   }
 
-  const handleChange = (event) => { // funcion para guardar
+  const handleChange = (event) => {
     let { value } = event.target
     setTextValue(value)
   }
 
-  const outputFunction = text => {
-    window.outputShit = text
-    if (text !== '\n') {
-      setCompiled(text)
-    }
+  const outputFunction = (text) => {
+    saveOutputs += text
+    setCompiled(saveOutputs)
   }
   const handleSubmit = async (event) => {
+    saveOutputs = ''
     event.preventDefault()
     const { Sk } = window
     function builtinRead (x) {
@@ -49,11 +50,10 @@ const Clases = (props) => {
     var myPromise = Sk.misceval.asyncToPromise(function () {
       return Sk.importMainWithBody('<stdin>', false, textValue, true)
     })
-    myPromise.then(function (mod) {
-      console.log('success')
-      console.log(compiled)
+    myPromise.then((mod) => {
+
     },
-    function (err) {
+    (err) => {
       console.log(err.toString())
     })
   }
@@ -79,7 +79,7 @@ const Clases = (props) => {
       </form>
       <div className='col s4'>
         <h5>Consola</h5>
-        {compiled.split('\n').map((line, i) => { // se crea un arreglo de strings por cada linea, luego cada linea se muestra en un <p> distinto
+        {compiled.split('\n').map((line, i) => {
           return (
             <p key={i} >{line}</p>
           )
