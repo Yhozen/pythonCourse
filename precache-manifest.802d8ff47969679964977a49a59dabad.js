@@ -12,7 +12,7 @@ self.__precacheManifest = [
     "url": "/pythonCourse/static/js/2.35f2573d.chunk.js"
   },
   {
-    "revision": "832ac460f4d0c6e4028ac59aba89e21b",
+    "revision": "de95d62d31f8c78665f693d3932115d9",
     "url": "/pythonCourse/index.html"
   }
 ];
