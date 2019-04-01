@@ -1,11 +1,11 @@
 {
-  "main.js": "/static/js/main.a09f5c85.chunk.js",
-  "main.js.map": "/static/js/main.a09f5c85.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.00f4f22b.chunk.js": "/static/js/2.00f4f22b.chunk.js",
-  "static/js/2.00f4f22b.chunk.js.map": "/static/js/2.00f4f22b.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.454a05beb59849191a1cd32e870e71b8.js": "/precache-manifest.454a05beb59849191a1cd32e870e71b8.js",
-  "service-worker.js": "/service-worker.js"
+  "main.js": "/pythonCourse/static/js/main.a09f5c85.chunk.js",
+  "main.js.map": "/pythonCourse/static/js/main.a09f5c85.chunk.js.map",
+  "runtime~main.js": "/pythonCourse/static/js/runtime~main.9f744007.js",
+  "runtime~main.js.map": "/pythonCourse/static/js/runtime~main.9f744007.js.map",
+  "static/js/2.35f2573d.chunk.js": "/pythonCourse/static/js/2.35f2573d.chunk.js",
+  "static/js/2.35f2573d.chunk.js.map": "/pythonCourse/static/js/2.35f2573d.chunk.js.map",
+  "index.html": "/pythonCourse/index.html",
+  "precache-manifest.676b88a3e3fd6ebf1dd9d4b849befee8.js": "/pythonCourse/precache-manifest.676b88a3e3fd6ebf1dd9d4b849befee8.js",
+  "service-worker.js": "/pythonCourse/service-worker.js"
 }
