@@ -34,7 +34,8 @@ const Clases = (props) => {
     saveOutputs += text
     setCompiled(saveOutputs)
   }
-  const handleSubmit = async (event) => {
+
+  const handleSubmit = (event) => {
     saveOutputs = ''
     event.preventDefault()
     const { Sk } = window
