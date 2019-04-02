@@ -17,20 +17,23 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-standard": "^4.0.0",
+    "react-app-env": "^1.2.3",
     "react-scripts": "^2.1.8",
     "standard": "^12.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "start": "react-app-env start",
+    "build": "react-app-env build",
+    "deploy": "gh-pages -d build",
+    "test": "react-app-env test --env=jsdom",
     "fix": "standard --fix",
-    "eject": "react-scripts eject"
+    "eject": "react-app-env eject"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "homepage": "http://garox.org/pythonCourse/"
 }
