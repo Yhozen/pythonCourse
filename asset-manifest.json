@@ -1,11 +1,19 @@
 {
-  "main.js": "/pythonCourse/static/js/main.ef9ccdb3.chunk.js",
-  "main.js.map": "/pythonCourse/static/js/main.ef9ccdb3.chunk.js.map",
-  "runtime~main.js": "/pythonCourse/static/js/runtime~main.9f744007.js",
-  "runtime~main.js.map": "/pythonCourse/static/js/runtime~main.9f744007.js.map",
-  "static/js/2.35f2573d.chunk.js": "/pythonCourse/static/js/2.35f2573d.chunk.js",
-  "static/js/2.35f2573d.chunk.js.map": "/pythonCourse/static/js/2.35f2573d.chunk.js.map",
+  "main.css": "/pythonCourse/static/css/main.3d01ba25.chunk.css",
+  "main.js": "/pythonCourse/static/js/main.faf986fe.chunk.js",
+  "main.js.map": "/pythonCourse/static/js/main.faf986fe.chunk.js.map",
+  "runtime~main.js": "/pythonCourse/static/js/runtime~main.8e5c87eb.js",
+  "runtime~main.js.map": "/pythonCourse/static/js/runtime~main.8e5c87eb.js.map",
+  "skulpt.js": "/pythonCourse/static/js/skulpt.2db4e0b6.chunk.js",
+  "skulpt.js.map": "/pythonCourse/static/js/skulpt.2db4e0b6.chunk.js.map",
+  "skulpt-stdlib.js": "/pythonCourse/static/js/skulpt-stdlib.efa02ba5.chunk.js",
+  "skulpt-stdlib.js.map": "/pythonCourse/static/js/skulpt-stdlib.efa02ba5.chunk.js.map",
+  "static/css/4.1fe68680.chunk.css": "/pythonCourse/static/css/4.1fe68680.chunk.css",
+  "static/js/4.f61536bf.chunk.js": "/pythonCourse/static/js/4.f61536bf.chunk.js",
+  "static/js/4.f61536bf.chunk.js.map": "/pythonCourse/static/js/4.f61536bf.chunk.js.map",
   "index.html": "/pythonCourse/index.html",
-  "precache-manifest.aecbc7a85b33d421af927301fddd6b9c.js": "/pythonCourse/precache-manifest.aecbc7a85b33d421af927301fddd6b9c.js",
-  "service-worker.js": "/pythonCourse/service-worker.js"
+  "precache-manifest.2bffb5ea81d0a9734640725c070dc248.js": "/pythonCourse/precache-manifest.2bffb5ea81d0a9734640725c070dc248.js",
+  "service-worker.js": "/pythonCourse/service-worker.js",
+  "static/css/4.1fe68680.chunk.css.map": "/pythonCourse/static/css/4.1fe68680.chunk.css.map",
+  "static/css/main.3d01ba25.chunk.css.map": "/pythonCourse/static/css/main.3d01ba25.chunk.css.map"
 }
