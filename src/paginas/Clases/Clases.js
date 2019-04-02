@@ -8,6 +8,7 @@ import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/material.css'
 import 'codemirror/mode/python/python'
 import 'codemirror/mode/javascript/javascript'
+import './clases.css'
 
 const Clases = (props) => {
   const useTextState = createPersistedState(`state-clase-${props.clase.n}`)
@@ -70,6 +71,7 @@ const Clases = (props) => {
   }
 
   const CodeMirrorConfig = {
+    theme: 'material',
     lineNumbers: true
   }
   return (
@@ -91,25 +93,15 @@ const Clases = (props) => {
             onChange={(editor, data, value) => {
             }}
           />
-          {/*
-           <div className='input-field col s12'>
-            <i className='material-icons prefix'>code</i>
-            <textarea value={textValue} onChange={handleChange} id='icon_prefix2' className='materialize-textarea' />
-            <label htmlFor='icon_prefix2'>Código</label>
-          </div>
-          */}
-
         </div>
         <button className='waves-effect waves-light btn' type='submit' value='Submit' >COMPILAR</button>
         {user && (<button className='waves-effect waves-light btn' onClick={hecho} >HECHO </button>)}
       </form>
-      <div className='col s4'>
-        <h5>Consola</h5>
-        {compiled.split('\n').map((line, i) => {
-          return (
-            <p key={i} >{line}</p>
-          )
-        })}
+      <div className='col s4 console' >
+        <h5>OUTPUT</h5>
+        <div id='console'>
+          {compiled}
+        </div>
       </div>
     </div>
   )
