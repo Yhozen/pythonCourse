@@ -2,6 +2,12 @@ import React, { useState, useContext } from 'react'
 import createPersistedState from 'use-persisted-state'
 import { database } from '../../firebase'
 import { Store } from '../../Store'
+import { Controlled as CodeMirror } from 'react-codemirror2'
+
+import 'codemirror/lib/codemirror.css'
+import 'codemirror/theme/material.css'
+import 'codemirror/mode/python/python'
+import 'codemirror/mode/javascript/javascript'
 
 const Clases = (props) => {
   const useTextState = createPersistedState(`state-clase-${props.clase.n}`)
@@ -27,19 +33,22 @@ const Clases = (props) => {
     })
   }
 
-  const handleChange = (event) => {
-    let { value } = event.target
-    setTextValue(value)
-  }
-
   const outputFunction = (text) => {
     saveOutputs += text
     setCompiled(saveOutputs)
   }
 
-  const handleSubmit = (event) => {
-    saveOutputs = ''
+  const handleSubmit = async (event) => {
     event.preventDefault()
+    await import(
+      /* webpackChunkName: "skulpt", webpackPreload: true */
+      '../../lib/skulpt.min.js'
+    )
+    await import(
+      /* webpackChunkName: "skulpt-stdlib", webpackPrefetch: true */
+      '../../lib/skulpt-stdlib'
+    )
+    saveOutputs = ''
     const { Sk } = window
     function builtinRead (x) {
       if (Sk.builtinFiles === undefined || Sk.builtinFiles['files'][x] === undefined) {
@@ -48,7 +57,6 @@ const Clases = (props) => {
         return Sk.builtinFiles['files'][x]
       }
     }
-    Sk.pre = 'output'
     Sk.configure({ output: outputFunction, read: builtinRead })
     var myPromise = Sk.misceval.asyncToPromise(function () {
       return Sk.importMainWithBody('<stdin>', false, textValue, true)
@@ -61,6 +69,9 @@ const Clases = (props) => {
     })
   }
 
+  const CodeMirrorConfig = {
+    lineNumbers: true
+  }
   return (
     <div className='row' onSubmit={handleSubmit}>
       <div className='col s4'>
@@ -70,12 +81,24 @@ const Clases = (props) => {
         </div>
       </div>
       <form className='col s4'>
-        <div className='row'>
-          <div className='input-field col s12'>
+        <div className='row' style={{marginTop: '3px'}}>
+          <CodeMirror
+            value={textValue}
+            config={CodeMirrorConfig}
+            onBeforeChange={(editor, data, value) => {
+              setTextValue(value)
+            }}
+            onChange={(editor, data, value) => {
+            }}
+          />
+          {/*
+           <div className='input-field col s12'>
             <i className='material-icons prefix'>code</i>
             <textarea value={textValue} onChange={handleChange} id='icon_prefix2' className='materialize-textarea' />
             <label htmlFor='icon_prefix2'>Código</label>
           </div>
+          */}
+
         </div>
         <button className='waves-effect waves-light btn' type='submit' value='Submit' >COMPILAR</button>
         {user && (<button className='waves-effect waves-light btn' onClick={hecho} >HECHO </button>)}
