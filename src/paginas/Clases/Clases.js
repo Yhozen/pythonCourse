@@ -1,11 +1,13 @@
 import React, { useState, useContext } from 'react'
+import createPersistedState from 'use-persisted-state'
 import { database } from '../../firebase'
 import { Store } from '../../Store'
 
 const Clases = (props) => {
+  const useTextState = createPersistedState(`state-clase-${props.clase.n}`)
   const { state: { user } } = useContext(Store)
   const [ compiled, setCompiled ] = useState('')
-  const [ textValue, setTextValue ] = useState('')
+  const [ textValue, setTextValue ] = useTextState('')
 
   let saveOutputs = '' // workaround, because I couldn't synchronize setCompiled
 
