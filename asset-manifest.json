@@ -1,7 +1,7 @@
 {
-  "main.css": "/pythonCourse/static/css/main.3d01ba25.chunk.css",
-  "main.js": "/pythonCourse/static/js/main.e48b7abd.chunk.js",
-  "main.js.map": "/pythonCourse/static/js/main.e48b7abd.chunk.js.map",
+  "main.css": "/pythonCourse/static/css/main.4f869b67.chunk.css",
+  "main.js": "/pythonCourse/static/js/main.14b96eac.chunk.js",
+  "main.js.map": "/pythonCourse/static/js/main.14b96eac.chunk.js.map",
   "runtime~main.js": "/pythonCourse/static/js/runtime~main.8e5c87eb.js",
   "runtime~main.js.map": "/pythonCourse/static/js/runtime~main.8e5c87eb.js.map",
   "skulpt.js": "/pythonCourse/static/js/skulpt.2db4e0b6.chunk.js",
@@ -12,8 +12,8 @@
   "static/js/4.f61536bf.chunk.js": "/pythonCourse/static/js/4.f61536bf.chunk.js",
   "static/js/4.f61536bf.chunk.js.map": "/pythonCourse/static/js/4.f61536bf.chunk.js.map",
   "index.html": "/pythonCourse/index.html",
-  "precache-manifest.85d2671fcb8ca80c8594bc395a330abe.js": "/pythonCourse/precache-manifest.85d2671fcb8ca80c8594bc395a330abe.js",
+  "precache-manifest.cca924d21b4ee8adcde7e411908bc858.js": "/pythonCourse/precache-manifest.cca924d21b4ee8adcde7e411908bc858.js",
   "service-worker.js": "/pythonCourse/service-worker.js",
   "static/css/4.1fe68680.chunk.css.map": "/pythonCourse/static/css/4.1fe68680.chunk.css.map",
-  "static/css/main.3d01ba25.chunk.css.map": "/pythonCourse/static/css/main.3d01ba25.chunk.css.map"
+  "static/css/main.4f869b67.chunk.css.map": "/pythonCourse/static/css/main.4f869b67.chunk.css.map"
 }

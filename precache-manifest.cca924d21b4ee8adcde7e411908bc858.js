@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "2380c7c2f9bfcd97d1d9",
-    "url": "/pythonCourse/static/css/main.3d01ba25.chunk.css"
+    "revision": "6d6bb24272d41dda452e",
+    "url": "/pythonCourse/static/css/main.4f869b67.chunk.css"
   },
   {
-    "revision": "2380c7c2f9bfcd97d1d9",
-    "url": "/pythonCourse/static/js/main.e48b7abd.chunk.js"
+    "revision": "6d6bb24272d41dda452e",
+    "url": "/pythonCourse/static/js/main.14b96eac.chunk.js"
   },
   {
     "revision": "faf7353f551975ae2cce",
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/pythonCourse/static/js/4.f61536bf.chunk.js"
   },
   {
-    "revision": "f34894bf3f24b8a391c7e29840f56158",
+    "revision": "6194e7b39ea1b52e9b39bc63cefaf4b1",
     "url": "/pythonCourse/index.html"
   }
 ];
