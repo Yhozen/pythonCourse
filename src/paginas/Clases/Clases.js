@@ -71,7 +71,7 @@ const Clases = (props) => {
   }
 
   const CodeMirrorConfig = {
-    theme: 'material',
+    // theme: 'material',
     lineNumbers: true
   }
   return (
@@ -86,7 +86,7 @@ const Clases = (props) => {
         <div className='row' style={{marginTop: '3px'}}>
           <CodeMirror
             value={textValue}
-            config={CodeMirrorConfig}
+            options={CodeMirrorConfig}
             onBeforeChange={(editor, data, value) => {
               setTextValue(value)
             }}
