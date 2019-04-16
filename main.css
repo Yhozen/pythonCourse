@@ -35,6 +35,8 @@ pre {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   background-color: #bdc3c7;
   animation: bgColor 30s ease infinite;
   background-blend-mode: multiply;
