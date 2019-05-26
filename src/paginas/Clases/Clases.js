@@ -16,8 +16,6 @@ const Clases = (props) => {
   const [ compiled, setCompiled ] = useState('')
   const [ textValue, setTextValue ] = useTextState('')
 
-  let saveOutputs = '' // workaround, because I couldn't synchronize setCompiled
-
   const hecho = () => {
     let nameRef = database.ref().child('vistos').child(user.uid)
     let n = props.clase.n
@@ -34,13 +32,12 @@ const Clases = (props) => {
     })
   }
 
-  const outputFunction = (text) => {
-    saveOutputs += text
-    setCompiled(saveOutputs)
-  }
-
+  const outputFunction = text => setCompiled(prevOutput => prevOutput + text)
+  
   const handleSubmit = async (event) => {
     event.preventDefault()
+    setCompiled(prevOutput => '')
+  
     await import(
       /* webpackChunkName: "skulpt", webpackPreload: true */
       '../../lib/skulpt.min.js'
@@ -49,7 +46,6 @@ const Clases = (props) => {
       /* webpackChunkName: "skulpt-stdlib", webpackPrefetch: true */
       '../../lib/skulpt-stdlib'
     )
-    saveOutputs = ''
     const { Sk } = window
     function builtinRead (x) {
       if (Sk.builtinFiles === undefined || Sk.builtinFiles['files'][x] === undefined) {
