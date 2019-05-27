@@ -8,7 +8,7 @@ const Header = (props) => {
   return (
     <header>
       <nav>
-        <div className='nav-wrapper cyan'>
+        <div className='nav-wrapper blue-grey darken-4'>
           <NavLink to='/' className='brand-logo'>#LoDamosVuelta</NavLink>
           <ul id='nav-mobile' className='right hide-on-med-and-down'>
             <li><NavLink activeClassName='active' to='/'>Inicio</NavLink></li>

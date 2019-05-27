@@ -67,7 +67,7 @@ const Clases = (props) => {
   }
 
   const CodeMirrorConfig = {
-    // theme: 'material',
+    theme: 'material',
     lineNumbers: true
   }
   return (

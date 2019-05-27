@@ -35,7 +35,7 @@ const Indice = (props) => {
     }
   }
   return (
-    <div>
+    <>
       <div className='nav-wrapper container'>
         <form>
           <div className='input-field'>
@@ -50,12 +50,12 @@ const Indice = (props) => {
         { state.listaClases.map((clase, i) => {
           return (
             <div key={Math.random()} className='col s4'>
-              <div className='card cyan lighten-3'>
+              <div className='card blue-grey darken-3'>
                 <div className='card-content white-text'>
                   <span className='card-title'>{clase.title}</span>
                   <p>{clase.brief}</p>
                 </div>
-                <div className='card-action cyan darken-3 '>
+                <div className='card-action blue-grey darken-2 '>
                   <Link to={'/clases/' + i} >Ir a la clase!</Link>
                 </div>
               </div>
@@ -64,7 +64,7 @@ const Indice = (props) => {
         })
         }
       </div>
-    </div>
+    </>
   )
 }
 

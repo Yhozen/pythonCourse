@@ -4,6 +4,8 @@
 }
 html, body {
   height: 100% !important;
+  background-color: #263238 !important;
+  color: white
 }
 html {
     font-family: Papercraft, Calibri, Trebuchet, sans-serif;

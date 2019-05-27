@@ -85,8 +85,8 @@ const Usuario = (props) => {
               </div>
             </div>
             {!loginOrRegister.val && confirmPass}
-            <button onClick={submitData} className='col s12 waves-effect waves-light btn'>{loginOrRegister.text1}</button>
-            <button onClick={toggleLoginOrRegister} className='col s12 waves-effect waves-light btn'>{loginOrRegister.text2}</button>
+            <button onClick={submitData} className='col s12 waves-effect waves-light btn blue-grey darken-2'>{loginOrRegister.text1}</button>
+            <button onClick={toggleLoginOrRegister} className='col s12 waves-effect waves-light btn blue-grey darken-2'>{loginOrRegister.text2}</button>
           </form>
         </div>
       )}
