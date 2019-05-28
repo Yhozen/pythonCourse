@@ -1,19 +1,19 @@
 {
-  "main.css": "/pythonCourse/static/css/main.4f869b67.chunk.css",
-  "main.js": "/pythonCourse/static/js/main.087be41b.chunk.js",
-  "main.js.map": "/pythonCourse/static/js/main.087be41b.chunk.js.map",
+  "main.css": "/pythonCourse/static/css/main.2399a597.chunk.css",
+  "main.js": "/pythonCourse/static/js/main.0fd80bf7.chunk.js",
+  "main.js.map": "/pythonCourse/static/js/main.0fd80bf7.chunk.js.map",
   "runtime~main.js": "/pythonCourse/static/js/runtime~main.8e5c87eb.js",
   "runtime~main.js.map": "/pythonCourse/static/js/runtime~main.8e5c87eb.js.map",
   "skulpt.js": "/pythonCourse/static/js/skulpt.2db4e0b6.chunk.js",
   "skulpt.js.map": "/pythonCourse/static/js/skulpt.2db4e0b6.chunk.js.map",
   "skulpt-stdlib.js": "/pythonCourse/static/js/skulpt-stdlib.efa02ba5.chunk.js",
   "skulpt-stdlib.js.map": "/pythonCourse/static/js/skulpt-stdlib.efa02ba5.chunk.js.map",
-  "static/css/4.1fe68680.chunk.css": "/pythonCourse/static/css/4.1fe68680.chunk.css",
-  "static/js/4.f3f1f4d2.chunk.js": "/pythonCourse/static/js/4.f3f1f4d2.chunk.js",
-  "static/js/4.f3f1f4d2.chunk.js.map": "/pythonCourse/static/js/4.f3f1f4d2.chunk.js.map",
+  "static/css/4.63fa329e.chunk.css": "/pythonCourse/static/css/4.63fa329e.chunk.css",
+  "static/js/4.f61536bf.chunk.js": "/pythonCourse/static/js/4.f61536bf.chunk.js",
+  "static/js/4.f61536bf.chunk.js.map": "/pythonCourse/static/js/4.f61536bf.chunk.js.map",
   "index.html": "/pythonCourse/index.html",
-  "precache-manifest.ce7e4abdbd089255f824b46d5a17df8a.js": "/pythonCourse/precache-manifest.ce7e4abdbd089255f824b46d5a17df8a.js",
+  "precache-manifest.e976db90a3cfbd6b8233e5784d3d40bc.js": "/pythonCourse/precache-manifest.e976db90a3cfbd6b8233e5784d3d40bc.js",
   "service-worker.js": "/pythonCourse/service-worker.js",
-  "static/css/4.1fe68680.chunk.css.map": "/pythonCourse/static/css/4.1fe68680.chunk.css.map",
-  "static/css/main.4f869b67.chunk.css.map": "/pythonCourse/static/css/main.4f869b67.chunk.css.map"
+  "static/css/4.63fa329e.chunk.css.map": "/pythonCourse/static/css/4.63fa329e.chunk.css.map",
+  "static/css/main.2399a597.chunk.css.map": "/pythonCourse/static/css/main.2399a597.chunk.css.map"
 }

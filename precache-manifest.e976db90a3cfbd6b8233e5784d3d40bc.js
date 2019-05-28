@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "67fa643d51690a70d211",
-    "url": "/pythonCourse/static/css/main.4f869b67.chunk.css"
+    "revision": "3b19f7400e6396099289",
+    "url": "/pythonCourse/static/css/main.2399a597.chunk.css"
   },
   {
-    "revision": "67fa643d51690a70d211",
-    "url": "/pythonCourse/static/js/main.087be41b.chunk.js"
+    "revision": "3b19f7400e6396099289",
+    "url": "/pythonCourse/static/js/main.0fd80bf7.chunk.js"
   },
   {
     "revision": "faf7353f551975ae2cce",
@@ -20,15 +20,15 @@ self.__precacheManifest = [
     "url": "/pythonCourse/static/js/skulpt-stdlib.efa02ba5.chunk.js"
   },
   {
-    "revision": "424b9f6410a699c0f25b",
-    "url": "/pythonCourse/static/css/4.1fe68680.chunk.css"
+    "revision": "140436353a99f0b0efdb",
+    "url": "/pythonCourse/static/css/4.63fa329e.chunk.css"
   },
   {
-    "revision": "424b9f6410a699c0f25b",
-    "url": "/pythonCourse/static/js/4.f3f1f4d2.chunk.js"
+    "revision": "140436353a99f0b0efdb",
+    "url": "/pythonCourse/static/js/4.f61536bf.chunk.js"
   },
   {
-    "revision": "3fde34ac6b0b2f2a450eb85822770485",
+    "revision": "33904209bd494f1b603ac7d69987b2b4",
     "url": "/pythonCourse/index.html"
   }
 ];
