@@ -11,13 +11,14 @@ import 'codemirror/mode/python/python'
 import 'codemirror/mode/javascript/javascript'
 import './clases.css'
 
+const subject = new Subject()
+
 const Clases = (props) => {
   // const useTextState = createPersistedState(`state-clase-${props.clase.n}`)
   const { state: { user } } = useContext(Store)
   const [ compiled, setCompiled ] = useState('')
   const [ textValue, setTextValue ] = useState('')
   const [ input, setInput ] = useState('')
-  const [ subject ] = useState(new Subject())
 
   const hecho = () => {
     let nameRef = database.ref().child('vistos').child(user.uid)
@@ -70,6 +71,7 @@ const Clases = (props) => {
   const onSubmitInput = e => {
     e.preventDefault()
     subject.next(input)
+    setInput('')
   } 
   const CodeMirrorConfig = {
     theme: 'material',
