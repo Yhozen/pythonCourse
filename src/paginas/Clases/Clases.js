@@ -1,8 +1,9 @@
 import React, { useState, useContext } from 'react'
-import createPersistedState from 'use-persisted-state'
+// import createPersistedState from 'use-persisted-state'
 import { database } from '../../firebase'
 import { Store } from '../../Store'
 import { Controlled as CodeMirror } from 'react-codemirror2'
+import { Subject } from 'rxjs'
 
 import 'codemirror/lib/codemirror.css'
 import 'codemirror/theme/material.css'
@@ -11,10 +12,12 @@ import 'codemirror/mode/javascript/javascript'
 import './clases.css'
 
 const Clases = (props) => {
-  const useTextState = createPersistedState(`state-clase-${props.clase.n}`)
+  // const useTextState = createPersistedState(`state-clase-${props.clase.n}`)
   const { state: { user } } = useContext(Store)
   const [ compiled, setCompiled ] = useState('')
-  const [ textValue, setTextValue ] = useTextState('')
+  const [ textValue, setTextValue ] = useState('')
+  const [ input, setInput ] = useState('')
+  const [ subject ] = useState(new Subject())
 
   const hecho = () => {
     let nameRef = database.ref().child('vistos').child(user.uid)
@@ -33,10 +36,12 @@ const Clases = (props) => {
   }
 
   const outputFunction = text => setCompiled(prevOutput => prevOutput + text)
-  
+  const inputFunction = () => new Promise(resolve => subject.subscribe(value => resolve(value)))
+  const builtinRead = x => window.Sk.builtinFiles['files'][x]
+
   const handleSubmit = async (event) => {
     event.preventDefault()
-    setCompiled(prevOutput => '')
+    setCompiled('')
   
     await import(
       /* webpackChunkName: "skulpt", webpackPreload: true */
@@ -47,38 +52,38 @@ const Clases = (props) => {
       '../../lib/skulpt-stdlib'
     )
     const { Sk } = window
-    function builtinRead (x) {
-      if (Sk.builtinFiles === undefined || Sk.builtinFiles['files'][x] === undefined) {
-        throw Error('File not found:')
-      } else {
-        return Sk.builtinFiles['files'][x]
-      }
-    }
-    Sk.configure({ output: outputFunction, read: builtinRead })
-    var myPromise = Sk.misceval.asyncToPromise(function () {
-      return Sk.importMainWithBody('<stdin>', false, textValue, true)
+    Sk.configure({ 
+      output: outputFunction,
+      read: builtinRead,
+      inputfun: inputFunction
     })
-    myPromise.then((mod) => {
+    
+    Sk.misceval.asyncToPromise(() => Sk.importMainWithBody('<stdin>', false, textValue, true))
+    .then(mod => {
 
-    },
-    (err) => {
+    }, err => {
       setCompiled(err.toString())
     })
   }
 
+
+  const onSubmitInput = e => {
+    e.preventDefault()
+    subject.next(input)
+  } 
   const CodeMirrorConfig = {
     theme: 'material',
     lineNumbers: true
   }
   return (
-    <div className='row' onSubmit={handleSubmit}>
+    <div className='row' >
       <div className='col s4'>
         <h5>{props.clase.title}</h5>
         <div className='texto-clases'>
           <pre >{props.clase.text}</pre>
         </div>
       </div>
-      <form className='col s4'>
+      <form name='editor-form' onSubmit={handleSubmit} className='col s4'>
         <div className='row' style={{marginTop: '3px'}}>
           <CodeMirror
             value={textValue}
@@ -97,6 +102,13 @@ const Clases = (props) => {
         <h5>OUTPUT</h5>
         <div id='console'>
           {compiled}
+          <form onSubmit={onSubmitInput} className="col s12">
+            <div className="row">
+              <div className="input-field col s12">
+                <input id="terminal-input" placeholder='Escribe en consola aquí' type="text" value={input} onChange={e => setInput(e.target.value)} className="validate" /> 
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

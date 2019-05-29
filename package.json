@@ -10,6 +10,7 @@
     "react-codemirror2": "^5.1.0",
     "react-dom": "^16.8.5",
     "react-router-dom": "^5.0.0",
+    "rxjs": "^6.5.2",
     "use-persisted-state": "^0.3.0"
   },
   "devDependencies": {

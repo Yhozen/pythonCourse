@@ -1,6 +1,6 @@
 import React from 'react' // importa libreria de react
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter as Router, Route, Switch } from 'react-router-dom'
 
 import Header from './Header'
 import Footer from './Footer'
